@@ -1,15 +1,15 @@
 import React from 'react';
 import './App.css';
 import Header from "./component/Header";
-import Body from "./component/Body";
+import Main from "./component/Main";
 import Footer from "./component/Footer";
 
 function App()
 {
     return (
-        <div>
+        <div className="mainframe">
             <Header/>
-            <Body/>
+            <Main/>
             <Footer/>
         </div>
     );

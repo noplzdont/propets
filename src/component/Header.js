@@ -7,10 +7,10 @@ const Header = () =>
     return (
         <div className = {`jumbotron-fluid d-flex justify-content-center ${style.jumbotron}`}>
             <header className = {`container row justify-content-between ${style.header}`}>
-                <div className = "col-xl-2 row d-flex align-content-center">
-                    <img src = {LOGO_MAIN_SMALL}/>
+                <div className = "col-xl-6 col-6 row d-flex align-content-center justify-content-start">
+                    <img className ={"img-fluid"} src = {LOGO_MAIN_SMALL}/>
                 </div>
-                <div className = "col-xl-2 row d-flex align-content-center">
+                <div className = "col-xl-6 col-6 row d-flex align-content-center justify-content-end">
                     <button className = {style.button}>
                         Sign In
                     </button>

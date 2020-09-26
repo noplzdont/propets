@@ -14,13 +14,13 @@ const Footer = () =>
     return (
         <div className = {`jumbotron-fluid d-flex justify-content-center ${style.jumbotron}`}>
             <footer className = {`container row justify-content-between`}>
-                <div className = "col-xl-2 row d-flex align-content-center">
-                    <img src = {LOGO_MAIN_LARGE}/>
+                <div className = {`col-xl-2 col-6 row d-flex align-content-center ${style.footer_logo}`}>
+                    <img className = {`img-fluid`} src = {LOGO_MAIN_LARGE}/>
                 </div>
-                <div className = {"col-xl-2 row d-flex align-content-center"}>
+                <div className = {`col-xl-2 row d-flex align-content-center ${style.footer_address}`}>
                     <p className = {`${style.p_address}`}>1600 Amphitheatre Pkwy Mountain View, CA 94043, USA</p>
                 </div>
-                <div className = "col-xl-3 row d-flex align-content-center justify-content-between">
+                <div className = {`col-xl-3 row d-flex align-content-center justify-content-between ${style.footer_buttons}`}>
                     <button className = {`${style.button}`}>
                         <img className = {`${style.btn_img}`} src = {LOGO_BUTTON_LOST}/>
                         Lost

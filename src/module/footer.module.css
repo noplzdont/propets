@@ -32,6 +32,7 @@
     width: 115px;
     height: 30px;
 
+    text-align: left;
     font-family: Montserrat, medium, serif;
     background-color: #669885;
     color: #FFFFFF;
@@ -43,4 +44,22 @@
     width: 15px;
     height: 15px;
     margin-right: 10px;
+}
+
+@media screen and (max-width: 600px)
+{
+    .footer_logo
+    {
+        order: 1;
+    }
+
+    .footer_buttons
+    {
+        order: 2;
+    }
+
+    .footer_address
+    {
+        order: 3;
+    }
 }

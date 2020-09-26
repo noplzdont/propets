@@ -1,7 +1,7 @@
 import React from 'react';
 import Home from "./Home";
 
-const Body = () =>
+const Main = () =>
 {
     return (
         <div>
@@ -10,4 +10,4 @@ const Body = () =>
     );
 };
 
-export default Body;
+export default Main;
