@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+.jumbotron
+{
+    padding: 0 0;
+}
+
+.div_main
+{
+    z-index: 10;
+}
+
+.text_main
+{
+    margin-top: 100px;
+    height: 200px;
+
+    text-align: left;
+    font-family: Montserrat, serif;
+    font-size: 56px;
+}
+
+.button_lost
+{
+    padding: 0;
+    height: 100px;
+    width: 75%;
+
+    border-top-right-radius: 60px;
+    border-bottom-right-radius: 60px;
+    border: 0;
+    background-color: #FFE18B;
+    opacity: 1;
+
+    text-align: left;
+    font-family: Montserrat, serif;
+    font-size: 32px;
+}
+
+.button_found
+{
+    padding: 0;
+    height: 100px;
+    width: 60%;
+
+    border-top-right-radius: 60px;
+    border-bottom-right-radius: 60px;
+    border: 0;
+    background-color: #84B6A3;
+    opacity: 1;
+
+    text-align: left;
+    font-family: Montserrat, serif;
+    font-size: 32px;
+    color: #FFFFFF;
+}
+
+.p_join
+{
+    font-family: Montserrat, serif;
+}
+
+.quote
+{
+    height: 250px;
+    background-color: #669885;
+}
+
+.p_quote
+{
+    font-family: Montserrat, serif;
+    color: #FFFFFF;
+    font-size: 32px;
+}
+
+.btn_img_search
+{
+    height: 80px;
+}
+
+@media screen and (max-width: 600px)
+{
+    .text_main
+    {
+        order: 1;
+    }
+
+    .dog_image
+    {
+        position: absolute !important;
+        z-index: 0;
+        top: 0;
+    }
+
+    .div_buttons
+    {
+        order: 3;
+    }
+
+    .p_join
+    {
+        order: 4;
+    }
+}

@@ -1,6 +1,8 @@
 import React from 'react';
 import style from "../module/footer.module.css";
 import LOGO_MAIN_LARGE from "../images/logo_main_large.png";
+import LOGO_FACEBOOK from "../images/logo_facebook.svg";
+import LOGO_INSTAGRAM from "../images/logo_instagram.svg";
 import LOGO_BUTTON_LOST from "../images/buttons/logo_button_lost.png";
 import LOGO_BUTTON_HOTEL from "../images/buttons/logo_button_hotel.png";
 import LOGO_BUTTON_FOUND from "../images/buttons/logo_button_found.png";
@@ -18,6 +20,8 @@ const Footer = () =>
                     <img className = {`img-fluid`} src = {LOGO_MAIN_LARGE}/>
                 </div>
                 <div className = {`col-xl-2 row d-flex align-content-center ${style.footer_address}`}>
+                    <img className = {`${style.social_img}`} src={LOGO_FACEBOOK}/>
+                    <img className = {`${style.social_img}`} src={LOGO_INSTAGRAM}/>
                     <p className = {`${style.p_address}`}>1600 Amphitheatre Pkwy Mountain View, CA 94043, USA</p>
                 </div>
                 <div className = {`col-xl-3 row d-flex align-content-center justify-content-between ${style.footer_buttons}`}>

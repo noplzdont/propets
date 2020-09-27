@@ -1,15 +1,15 @@
 import React from 'react';
 import './App.css';
 import Header from "./component/Header";
-import Main from "./component/Main";
 import Footer from "./component/Footer";
+import Home from "./component/Home";
 
 function App()
 {
     return (
         <div className="mainframe">
             <Header/>
-            <Main/>
+            <Home/>
             <Footer/>
         </div>
     );
