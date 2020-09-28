@@ -60,7 +60,7 @@
     font-family: Montserrat, serif;
 }
 
-.quote
+.section_quote
 {
     height: 250px;
     background-color: #669885;
@@ -76,6 +76,43 @@
 .btn_img_search
 {
     height: 80px;
+}
+
+.section_info
+{
+    height: 450px;
+
+    font-family: Montserrat, serif;
+}
+
+ol
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 18px;
+}
+
+li::before
+{
+    content: "•";
+    color: #669885;
+    font-size: 20px;
+}
+
+.section_coming_soon
+{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #FF6F61;
+
+    font-family: Montserrat, serif;
+    color: #FFFFFF;
+}
+
+.coming_soon_content
+{
+    height: 125px;
 }
 
 @media screen and (max-width: 600px)
