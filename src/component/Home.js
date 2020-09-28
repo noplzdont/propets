@@ -20,7 +20,7 @@ const Home = () =>
                         <div className = {style.div_buttons}>
                             <button className = {`d-flex align-items-center justify-content-between ${style.button_lost}`}>
                                 I lost my pet!
-                                <img className = {style.btn_img_search} src = {LOGO_SEARCH}/>
+                                <img className = {style.btn_img_search} src = {LOGO_SEARCH} alt=''/>
                             </button>
                             <button className = {style.button_found}>I found a pet!</button>
                         </div>
