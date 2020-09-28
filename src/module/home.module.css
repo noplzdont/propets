@@ -62,8 +62,16 @@
 
 .section_quote
 {
-    height: 250px;
     background-color: #669885;
+}
+
+.section_quote_content
+{
+    padding: 0 160px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .p_quote
@@ -117,16 +125,9 @@ li::before
 
 @media screen and (max-width: 600px)
 {
-    .text_main
+    /*.text_main
     {
         order: 1;
-    }
-
-    .dog_image
-    {
-        position: absolute !important;
-        z-index: 0;
-        top: 0;
     }
 
     .div_buttons
@@ -137,5 +138,5 @@ li::before
     .p_join
     {
         order: 4;
-    }
+    }*/
 }

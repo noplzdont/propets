@@ -1,7 +1,7 @@
 import React from 'react';
 import style from "../module/home.module.css";
-import IMAGE_DOG from "../images/image_dog.png";
 import LOGO_SEARCH from "../images/buttons/logo_button_search.png";
+import IMAGE_DOG from "../images/image_dog.png";
 import IMAGE_PETS from "../images/image_pets.png";
 import LOGO_HEART from "../images/logo_heart.png";
 
@@ -33,17 +33,15 @@ const Home = () =>
                     </div>
                 </div>
             </main>
-            <section className = {`d-flex align-items-center justify-content-between ${style.section_quote}`}>
+            <section className = {`${style.section_quote}`}>
                 <div className = "container">
-                    <div className = "row d-flex align-content-center justify-content-center">
-                        <div className = {`col-xl-9`}>
-                            <p className = {style.p_quote}>Our fluffy space for lovers, admirers, dads and moms of our
-                                                           four-legged, winged, tailed guys.</p>
-                        </div>
+                    <div className = {style.section_quote_content}>
+                        <p className = {style.p_quote}>Our fluffy space for lovers, admirers, dads and moms of our
+                                                       four-legged, winged, tailed guys.</p>
                     </div>
                 </div>
             </section>
-            <section className = {`d-flex align-items-center justify-content-between ${style.section_info}`}>
+            <section className = {`d-flex align-items-center ${style.section_info}`}>
                 <div className = {`container`}>
                     <div className = {`row d-flex align-content-center justify-content-between`}>
                         <div className = {"col-xl-5"}>
@@ -65,9 +63,9 @@ const Home = () =>
                     </div>
                 </div>
             </section>
-            <section className = {`d-flex align-items-center justify-content-between ${style.section_coming_soon}`}>
+            <section className = {`${style.section_coming_soon}`}>
                 <div className = {"container"}>
-                    <div className = {`row d-flex align-content-center justify-content-between ${style.coming_soon_content}`}>
+                    <div className = {`row d-flex align-content-center justify-content-around ${style.coming_soon_content}`}>
                         <div className = {"col-xl-5"}>
                             <p>Coming soon</p>
                         </div>
