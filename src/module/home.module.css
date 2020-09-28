@@ -7,17 +7,32 @@
 
 .div_main
 {
-    z-index: 10;
+    width: 500px;
+    padding-top: 100px;
+    padding-bottom: 40px;
+}
+
+.section_main
+{
+    background-image: url(../images/image_dog.png);
+    background-position: right center;
+    background-size: 450px 600px;
+    background-repeat: no-repeat;
 }
 
 .text_main
 {
-    margin-top: 100px;
+    margin-bottom: 50px;
     height: 200px;
 
     text-align: left;
     font-family: Montserrat, serif;
     font-size: 56px;
+}
+
+.div_buttons
+{
+    margin-bottom: 40px;
 }
 
 .button_lost
@@ -57,6 +72,7 @@
 
 .p_join
 {
+    margin: 0;
     font-family: Montserrat, serif;
 }
 
@@ -88,9 +104,16 @@
 
 .section_info
 {
-    height: 450px;
-
     font-family: Montserrat, serif;
+}
+
+.section_info_wrapper
+{
+    padding: 55px 0 70px 500px !important;
+    background-image: url(../images/image_pets.png);
+    background-position: left center;
+    background-size: 480px 320px;
+    background-repeat: no-repeat;
 }
 
 ol
@@ -101,11 +124,21 @@ ol
     font-size: 18px;
 }
 
+li
+{
+    margin-bottom: 15px;
+}
+
 li::before
 {
-    content: "•";
-    color: #669885;
-    font-size: 20px;
+    content: " ";
+    background-color: #669885;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 15px;
 }
 
 .section_coming_soon
@@ -121,6 +154,34 @@ li::before
 .coming_soon_content
 {
     height: 125px;
+}
+
+.coming_soon_title
+{
+    font-size: 56px;
+}
+
+.coming_soon_text
+{
+    display: flex;
+    align-items: center;
+
+    font-size: 16px;
+}
+
+.coming_soon_red_heart
+{
+    width: 105px;
+    height: 105px;
+    background-image: url(../images/logo_heart.png);
+    background-position: left top;
+    background-size: 105px 105px;
+    background-repeat: no-repeat;
+
+    font-size: 16px;
+    color: #FFFFFF;
+    line-height: 105px;
+    text-align: center;
 }
 
 @media screen and (max-width: 600px)
