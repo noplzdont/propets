@@ -62,8 +62,15 @@
 
 .quote
 {
-    height: 250px;
     background-color: #669885;
+}
+
+.quote_content {
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 200px !important;
 }
 
 .p_quote

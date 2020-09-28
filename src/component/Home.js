@@ -38,7 +38,7 @@ const Home = () =>
             <section className = {style.quote}>
                 <div className = "container">
                     <div className = {`row ${style.div_quote}`}>
-                        <div className = {`col-xl-8 d-flex align-content-center justify-content-center`}>
+                        <div className = {`${style.quote_content}`}>
                             <p className = {style.p_quote}>Our fluffy space for lovers, admirers, dads and moms of our
                                                            four-legged,
                                                            winged, tailed guys.</p>
