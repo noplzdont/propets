@@ -12,22 +12,18 @@ const Home = () =>
                     <div className = {`col-xl-6 col-12 col-lg-6 row d-flex flex-column align-content-center justify-content-around ${style.div_main}`}>
                         <h2 className = {`${style.text_main}`}>
                             Welcome to your
-                            <span style = {{
-                                color: "#669885"
-                            }}> pawfessional </span>
+                            <span className = {"color_green"}> pawfessional </span>
                             community
                         </h2>
                         <div className = {style.div_buttons}>
                             <button className = {`d-flex align-items-center justify-content-between ${style.button_lost}`}>
                                 I lost my pet!
-                                <img className = {style.btn_img_search} src = {LOGO_SEARCH} alt=''/>
+                                <img className = {style.btn_img_search} src = {LOGO_SEARCH} alt = ''/>
                             </button>
                             <button className = {style.button_found}>I found a pet!</button>
                         </div>
                         <p className = {style.p_join}>I’m okay, just want to
-                            <span style = {{
-                                color: "#669885"
-                            }}> JOIN </span>
+                            <span className = {"color_green"}> JOIN </span>
                                                       the pawsome community!</p>
                     </div>
                     {/*<div className = {`col-xl-6 col-12 col-lg-6 container row align-content-center ${style.dog_image}`}>*/}
@@ -35,20 +31,54 @@ const Home = () =>
                     {/*</div>*/}
                 </div>
             </main>
-            <section className = {style.quote}>
+            <section className = {`d-flex align-items-center justify-content-between ${style.section_quote}`}>
                 <div className = "container">
-                    <div className = {`row ${style.div_quote}`}>
-                        <div className = {`${style.quote_content}`}>
+                    <div className = "row d-flex align-content-center justify-content-center">
+                        <div className = {`col-xl-9`}>
                             <p className = {style.p_quote}>Our fluffy space for lovers, admirers, dads and moms of our
-                                                           four-legged,
-                                                           winged, tailed guys.</p>
+                                                           four-legged, winged, tailed guys.</p>
                         </div>
                     </div>
                 </div>
             </section>
-            <section style={{
-                height: "50px"
-            }}></section>
+            <section className = {`d-flex align-items-center justify-content-between ${style.section_info}`}>
+                <div className = {`container`}>
+                    <div className = {`row d-flex align-content-center justify-content-between`}>
+                        <div className = {"col-xl-5"}>
+                            <img className = {`img-fluid`} src = {IMAGE_PETS}/>
+                        </div>
+                        <div className = {`col-xl-7`}>
+                            <p className = {"color_green"}
+                               style = {{
+                                   fontSize: "24px"
+                               }}>Here is collected everything that your pet needs:</p>
+                            <ol>
+                                <li>professional veterinarian tips;</li>
+                                <li>useful information about education and care;</li>
+                                <li>fostering home search;</li>
+                                <li>information about pet-sitting and walking service;</li>
+                                <li>and of course, great communication with new friends in your social network!</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section className = {`d-flex align-items-center justify-content-between ${style.section_coming_soon}`}>
+                <div className = {"container"}>
+                    <div className = {`row d-flex align-content-center justify-content-between ${style.coming_soon_content}`}>
+                        <div className = {"col-xl-5"}>
+                            <p>Coming soon</p>
+                        </div>
+                        <div className = {"col-xl-5"}>
+                            <p>We are planing to open a new service, where your cats and dogs can find their love!</p>
+                        </div>
+                        <div className = {"col-xl-2"}>
+                            <img className = "img-fluid" src = {LOGO_HEART}/>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
         </div>
     );
 };

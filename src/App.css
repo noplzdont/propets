@@ -5,3 +5,14 @@
     flex-direction: column;
     justify-content: space-between;
 }
+
+.color_white
+{
+    color: #FFFFFF;
+}
+
+.color_green
+{
+    color: #669885;
+}
+
