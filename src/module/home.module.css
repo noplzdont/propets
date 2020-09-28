@@ -5,6 +5,13 @@
     padding: 0 0;
 }
 
+.section_main {
+    background-image: url(../images/image_dog.png);
+    background-position: right center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
 .div_main
 {
     z-index: 10;

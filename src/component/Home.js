@@ -7,7 +7,7 @@ const Home = () =>
 {
     return (
         <div>
-            <main className = "container">
+            <main className ={`container ${style.section_main}`}>
                 <div className = "row position-relative d-flex justify-content-between">
                     <div className = {`col-xl-6 col-12 col-lg-6 row d-flex flex-column align-content-center justify-content-around ${style.div_main}`}>
                         <h2 className = {`${style.text_main}`}>
@@ -30,9 +30,9 @@ const Home = () =>
                             }}> JOIN </span>
                                                       the pawsome community!</p>
                     </div>
-                    <div className = {`col-xl-6 col-12 col-lg-6 container row align-content-center ${style.dog_image}`}>
-                        <img className = {"img-fluid"} src = {IMAGE_DOG}/>
-                    </div>
+                    {/*<div className = {`col-xl-6 col-12 col-lg-6 container row align-content-center ${style.dog_image}`}>*/}
+                    {/*    <img className = {"img-fluid"} src = {IMAGE_DOG}/>*/}
+                    {/*</div>*/}
                 </div>
             </main>
             <section className = {style.quote}>
