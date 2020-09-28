@@ -22,7 +22,7 @@
 
 .button_lost
 {
-    padding: 0;
+    padding: 0 0 0 20px;
     height: 100px;
     width: 75%;
 
@@ -39,7 +39,7 @@
 
 .button_found
 {
-    padding: 0;
+    padding: 0 0 0 20px;
     height: 100px;
     width: 60%;
 
