@@ -1,6 +1,10 @@
 import React from 'react';
 import style from "../module/home.module.css";
 import LOGO_SEARCH from "../images/buttons/logo_button_search.png";
+import LOGO_MAIN from "../images/logo_main_large.png";
+import LOGO_FACEBOOK from "../images/logo_facebook.svg";
+import LOGO_PAW from "../images/buttons/logo_button_found.png";
+import FormSignUp from "./authorization/Form_Sign_Up";
 
 const Home = () =>
 {
@@ -62,6 +66,39 @@ const Home = () =>
                                 LOVE
                             </div>
                         </div>
+                    </div>
+                </div>
+            </section>
+            <section className = {style.section_authorization}>
+                <div className = {style.div_authorization}>
+                    <img src = {LOGO_MAIN} style = {{
+                        filter: "invert(61%) sepia(9%) saturate(1118%) hue-rotate(105deg) brightness(89%) contrast(88%)"
+                    }}/>
+                    <button>X</button>
+                    <p>Welcome! Please sign in / sign up to continue or</p>
+                    <button>
+                        <img src = {LOGO_FACEBOOK}/>
+                        Enter with Facebook
+                    </button>
+                    <div>
+                        <button>
+                            Sign In
+                        </button>
+                        <button>
+                            Sign Up
+                        </button>
+                    </div>
+                    <div>
+                        <FormSignUp/>
+                    </div>
+                    <div>
+                        <p>By clicking “Submit”, you agree to us processing your information in accordance with these
+                           terms.</p>
+                        <button>Cancel</button>
+                        <button>
+                            <img src = {LOGO_PAW}/>
+                            Submit
+                        </button>
                     </div>
                 </div>
             </section>
