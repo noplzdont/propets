@@ -186,11 +186,11 @@ li::before
 
 .section_authorization
 {
-    /*position: fixed;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;*/
+    bottom: 0;
 
     height: 100vh;
     display: flex;
@@ -200,13 +200,6 @@ li::before
 
     backdrop-filter: blur(10px);
     overflow-y: scroll;
-}
-
-.div_authorization
-{
-    width: 650px;
-    height: 390px;
-    background-color: #FFFFFF;
 }
 
 @media screen and (max-width: 600px)
