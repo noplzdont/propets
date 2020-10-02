@@ -184,24 +184,6 @@ li::before
     text-align: center;
 }
 
-.section_authorization
-{
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-
-    backdrop-filter: blur(10px);
-    overflow-y: scroll;
-}
-
 @media screen and (max-width: 600px)
 {
     /*.text_main
