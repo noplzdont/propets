@@ -4,7 +4,6 @@ import LOGO_MAIN from "../../images/logo_main_large.png";
 import LOGO_FACEBOOK from "../../images/logo_facebook.svg";
 import LOGO_PAW from "../../images/buttons/logo_button_found.png";
 import Authform from "./Auth_form";
-import {FontAwesomeIcon} from "@fortawesome/fontawesome-free";
 
 const Authorization = () =>
 {

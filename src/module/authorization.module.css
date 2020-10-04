@@ -190,10 +190,21 @@
     justify-content: space-between;
 }
 
-.div_auth_form_block
+.div_auth_form_block_sign_up
 {
     padding-top: 30px;
     width: 50%;
+}
+
+.div_auth_form_block_sign_in
+{
+    padding-top: 30px;
+    width: 50%;
+    height: 172px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .div_auth_form_block div
@@ -219,6 +230,19 @@
 
 .p_password_reenter
 {
+    text-align: left;
+    font-family: Montserrat, serif;
+    font-size: 10px;
+    color: #BABABA;
+}
+
+.btn_forgot_pass
+{
+    margin-left: 80px;
+
+    border: 0;
+    background-color: #FFFFFF;
+
     text-align: left;
     font-family: Montserrat, serif;
     font-size: 10px;

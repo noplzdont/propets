@@ -68,7 +68,7 @@ const Home = () =>
                 </div>
             </section>
             <section>
-                <Route path={"/auth"}
+                <Route path={["/auth", "/auth/registration", "/auth/login"]}
                        exact render={(args) => <Authorization {...args}/>}/>
             </section>
         </div>

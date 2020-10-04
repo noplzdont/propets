@@ -5,19 +5,19 @@
     padding: 0 0;
 }
 
-.div_main
-{
-    width: 500px;
-    padding-top: 100px;
-    padding-bottom: 40px;
-}
-
 .section_main
 {
     background-image: url(../images/image_dog.png);
     background-position: right center;
     background-size: 450px 600px;
     background-repeat: no-repeat;
+}
+
+.div_main
+{
+    width: 500px;
+    padding-top: 100px;
+    padding-bottom: 40px;
 }
 
 .text_main
