@@ -6,7 +6,7 @@ import Sidespace from "../Sidespace";
 const HomeIn = () =>
 {
     return (
-        <div className="d-flex justify-content-between">
+        <div className="d-flex justify-content-center">
             <Sidebar/>
             <Feed/>
             <Sidespace/>
