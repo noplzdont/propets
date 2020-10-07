@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+.div_wrapper
+{
+    width: 650px;
+}
+
+.div_p_wrapper
+{
+    margin-top: 10px;
+
+    display: flex;
+    flex-direction: row;
+
+    font-family: Montserrat, serif;
+    font-size: 16px;
+    color: #669885;
+}
+
+.div_p_wrapper p
+{
+    margin-left: 10px;
+}
+
+.div_form_wrapper
+{
+    height: 500px;
+    background-color: #FFFFFF;
+
+    box-shadow: 0px 3px 6px #00000029;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.section_form
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.div_input_side
+{
+    width: 50%;
+}
+
+.div_upload_side
+{
+    width: 50%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.img_scale
+{
+    width: 190px;
+    height: 180px;
+    margin-bottom: 20px;
+
+    align-self: center;
+}
+
+.div_upload_side_left
+{
+    width: 50%;
+    padding-top: 20px;
+
+    border-top: 1px solid #BABABA;
+}
+
+.div_upload_side_right
+{
+    width: 50%;
+    padding-top: 20px;
+
+    border-top: 1px solid #BABABA;
+}
+
+.div_dropzone
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon_upload
+{
+    font-size: 30px;
+    color: #8DBFAC;
+}
+
+.p_dragndrop
+{
+    width: 90px;
+    height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    font-family: Montserrat, serif;
+    font-size: 12px;
+    text-align: center;
+}
+
+.btn_browse
+{
+    width: 75px;
+    height: 30px;
+
+    background-color: #FFFFFF;
+    border: 1px solid #8DBFAC;
+    border-radius: 50px;
+
+    font-family: Montserrat, serif;
+    font-size: 12px;
+    color: #8DBFAC;
+}
+
+.div_image_list
+{
+    width: 140px;
+    height: 110px;
+
+    border: 1px solid #669885;
+}
+
+.section_footer_contact
+{
+    width: 630px;
+    height: 120px;
+    padding-top: 10px;
+
+    align-self: center;
+
+    border-top: 1px solid #BABABA;
+}
+
+.button_icon
+{
+    width: 18px;
+    height: 16px;
+    margin-right: 10px;
+}

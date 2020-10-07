@@ -1,6 +1,7 @@
 .div_wrapper
 {
     width: 680px;
+    padding: 15px 15px 15px 15px;
     background-color: azure;
 
     display: flex;
