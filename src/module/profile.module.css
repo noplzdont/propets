@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+.div_wrapper
+{
+    width: 650px;
+}
+
+.div_p_wrapper
+{
+    margin-top: 10px;
+
+    display: flex;
+    flex-direction: row;
+
+    font-family: Montserrat, serif;
+    font-size: 16px;
+    color: #669885;
+}
+
+.div_p_wrapper p
+{
+    margin-left: 10px;
+}
+
+.div_button_wrapper
+{
+    height: 35px;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.button_profile
+{
+    margin: 0;
+    width: 50%;
+    height: 35px;
+
+    border: 0;
+    background-color: #669885;
+
+    font-family: Montserrat, serif;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
+.button_activities
+{
+    margin: 0;
+    width: 50%;
+    height: 35px;
+
+    border: 0;
+    background-color: #669885;
+
+    font-family: Montserrat, serif;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
+.section_profile
+{
+    padding: 0;
+    height: 270px;
+
+    box-shadow: 0 3px 6px #00000029;
+}
+
+.div_data_wrapper
+{
+    margin: 0;
+    height: 235px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.section_content
+{
+    width: 410px;
+    height: 150px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.div_img_name_wrapper
+{
+    display: flex;
+    flex-direction: row;
+}
