@@ -50,8 +50,8 @@ const LostFoundForm = () =>
                             <label className = {style.input_label} htmlFor = "features">Distinctive features:
                                 <span className = {style.label_span}> up to 60 chars</span>
                             </label>
-                            <input className = {style.input_form_feature}
-                                   maxlength = {60}
+                            <textarea className = {style.input_form_feature}
+                                   maxLength = {60}
                                    name = "features"
                                    placeholder = "blue collar with stars, no left ear, damaged tail."/>
                         </div>
@@ -59,14 +59,14 @@ const LostFoundForm = () =>
                             <label className = {style.input_label} htmlFor = "description">Description:
                                 <span className = {style.label_span}> up to 150 chars</span>
                             </label>
-                            <input className = {style.input_form_description}
-                                   maxlength = {150}
+                            <textarea className = {style.input_form_description}
+                                   maxLength = {150}
                                    name = "description"
                                    placeholder = "brown fox jumps over a lazy dog. DJs flock by when jhkjk jhgMTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs."/>
                         </div>
                         <div className = {style.div_input_block}>
                             <label className = {style.input_label} htmlFor = "location">Location:</label>
-                            <input className = {style.input_form_location}
+                            <textarea className = {style.input_form_location}
                                    name = "location"
                                    placeholder = "Florentin Street, Tel Aviv"/>
                         </div>
