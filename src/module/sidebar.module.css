@@ -13,10 +13,10 @@
 
 .button_menu
 {
+    padding: 0 0 0 830px;
     height: 40px;
-    width: 140px;
-
-    align-self: flex-end;
+    width: 1000px;
+    transform: translateX(-810px);
 
     border: 0;
     border-top-right-radius: 50px;
@@ -52,11 +52,11 @@
 
 .button_account
 {
+    padding: 0 0 0 860px;
     height: 40px;
-    width: 140px;
+    width: 1000px;
+    transform: translateX(-840px);
     margin-bottom: 20px;
-
-    align-self: flex-end;
 
     border: 0;
     border-top-right-radius: 50px;
@@ -77,10 +77,10 @@
 
 .button_logout
 {
+    padding: 0 0 0 860px;
     height: 40px;
-    width: 140px;
-
-    align-self: flex-end;
+    width: 1000px;
+    transform: translateX(-840px);
 
     border: 0;
     border-top-right-radius: 50px;

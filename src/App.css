@@ -6,9 +6,10 @@
 .mainframe
 {
     min-height: 100vh;
-    display: flex;
+
+    /*display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between;*/
 }
 
 .color_white

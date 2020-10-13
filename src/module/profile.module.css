@@ -70,6 +70,8 @@
 {
     margin: 0;
     height: 235px;
+    padding-top: 25px;
+    padding-left: 15px;
 
     display: flex;
     flex-direction: column;
@@ -88,4 +90,123 @@
 {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
+
+.btn_img
+{
+    width: 45px;
+    height: 45px;
+    margin-right: 40px;
+
+    background-color: azure;
+    border: 0;
+    border-radius: 50px;
+}
+
+.p_name
+{
+    height: 20px;
+    margin: 0;
+    padding: 0;
+
+    font-family: Montserrat, serif;
+    font-size: 16px;
+    color: #84B6A3;
+}
+
+.btn_pencil
+{
+    width: 10px;
+    height: 10px;
+
+    font-size: 10px;
+    color: #BABABA;
+
+    border: 0;
+    background-color: #FFFFFF;
+}
+
+.div_input_block
+{
+    margin-top: 15px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.input_label
+{
+    margin: 0 20px 0 0;
+
+    font-family: Montserrat, serif;
+    font-size: 12px;
+    color: #393939;
+}
+
+.input
+{
+    width: 320px;
+    height: 20px;
+
+    border: 0;
+    border-bottom: 1px solid #84B6A3;
+
+    font-family: Montserrat, serif;
+    font-size: 12px;
+    color: #BABABA;
+}
+
+.div_save_btn_wrapper
+{
+    margin-top: 30px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.btn_cancel
+{
+    width: 100px;
+    height: 35px;
+    margin-right: 10px;
+
+    border: 1px solid #669885;
+    border-radius: 50px;
+    background-color: #FFFFFF;
+
+    font-family: Montserrat, serif;
+    font-size: 12px;
+    color: #669885;
+}
+
+.btn_cancel:active
+{
+    background-color: #669885;
+    color: #FFFFFF;
+}
+
+.btn_save
+{
+    width: 150px;
+    height: 35px;
+
+    border: 1px solid #669885;
+    border-radius: 50px;
+    background-color: #669885;
+
+    font-family: Montserrat, serif;
+    font-size: 12px;
+    color: #FFFFFF;
+}
+
+.btn_save:active
+{
+    background-color: #FFFFFF;
+    color: #669885;
+}
+
+
