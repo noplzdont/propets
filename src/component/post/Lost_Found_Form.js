@@ -1,6 +1,6 @@
 import React from 'react';
-import style from "../module/lost_found_form.module.css";
-import IMAGE_SCALE from "../images/image_human_dog_scale.png";
+import style from "../../module/lost_found_form.module.css";
+import IMAGE_SCALE from "../../images/image_human_dog_scale.png";
 
 const LostFoundForm = () =>
 {
