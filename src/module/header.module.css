@@ -34,7 +34,7 @@
     height: 70px;
 }
 
-.button
+.button_sign_in
 {
     font-family: Montserrat, medium, serif;
     background-color: #669885;
@@ -45,4 +45,10 @@
     border: 1px solid #FFFFFF;
     border-radius: 17px;
     opacity: 1;
+}
+
+.button_sign_in:active
+{
+    background-color: #FFFFFF;
+    color: #669885;
 }

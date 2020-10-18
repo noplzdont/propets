@@ -61,7 +61,6 @@
 .section_profile
 {
     padding: 0;
-    height: 270px;
 
     box-shadow: 0 3px 6px #00000029;
 }
@@ -209,4 +208,11 @@
     color: #669885;
 }
 
+.div_activities_wrapper
+{
+    margin: 0;
+    padding: 10px 0 10px 0;
 
+    display: flex;
+    flex-direction: column;
+}

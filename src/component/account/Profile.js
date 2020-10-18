@@ -1,6 +1,7 @@
 import React from 'react';
 import style from "../../module/profile.module.css";
 import ProfileData from "./Profile_data";
+import ProfileActivities from "./Profile_activities";
 
 const Profile = () =>
 {
@@ -16,7 +17,8 @@ const Profile = () =>
                     <button className = {style.button_activities}>Activities</button>
                 </div>
                 <div>
-                    <ProfileData/>
+                    {/*<ProfileData/>*/}
+                    <ProfileActivities/>
                 </div>
             </section>
         </div>

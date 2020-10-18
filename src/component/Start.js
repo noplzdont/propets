@@ -2,7 +2,8 @@ import React from 'react';
 import style from "../module/home.module.css";
 import LOGO_SEARCH from "../images/buttons/logo_button_search.png";
 import Authorization from "./authorization/Authorization";
-import {Route} from "react-router-dom";
+import {Route, Link} from "react-router-dom";
+import {BASE_URL} from "../utils/constants";
 
 const Start = () =>
 {
@@ -68,8 +69,7 @@ const Start = () =>
                 </div>
             </section>
             <section>
-                <Route path={["/auth"]}
-                       exact render={(args) => <Authorization {...args}/>}/>
+                {/*<Authorization/>*/}
             </section>
         </div>
     );

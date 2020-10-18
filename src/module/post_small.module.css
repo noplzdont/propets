@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+.div_wrapper
+{
+    width: 650px;
+    height: 280px;
+    margin-bottom: 20px;
+
+    box-shadow: 0 3px 6px #00000029;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.section_left
+{
+    width: 42%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img_photo
+{
+    width: 250px;
+    height: 250px;
+}
+
+.section_right
+{
+    width: 58%;
+    padding-top: 15px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.div_p_buttons
+{
+    height: 30px;
+
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.div_p_buttons p
+{
+    margin: 0;
+    padding: 0;
+
+    font-family: Montserrat, serif;
+    font-size: 22px;
+    font-weight: bold;
+    color: #669885;
+}
+
+.div_p_buttons button
+{
+    border: 0;
+    background-color: #FFFFFF;
+
+    font-size: 18px;
+    color: #BABABA;
+}
+
+.fields
+{
+    height: 55px;
+    margin-top: 10px;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.fields_left
+{
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.div_label_p_block
+{
+    height: 18px;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    align-content: center;
+
+    font-family: Montserrat, serif;
+    font-size: 12px;
+}
+
+.div_label_p_block label
+{
+    color: #669885;
+    margin: 0 5px 0 0;
+}
+
+.div_label_p_block p
+{
+    margin: 0;
+    padding: 0;
+}
+
+.fields_right
+{
+    width: 50%;
+    display: flex;
+}
+
+.div_description
+{
+    height: 55px;
+    margin-top: 10px;
+
+    display: flex;
+}
+
+.div_info_block
+{
+    margin: 10px 0 0 0;
+    padding-top: 5px;
+    border-top: 1px solid #BABABA;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.div_info_block p
+{
+    font-family: Montserrat, serif;
+    font-size: 12px;
+}
+
+.div_account_block
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.button_profile
+{
+    width: 180px;
+    height: 45px;
+
+    background-color: azure;
+    border: 0;
+
+    font-family: Montserrat, serif;
+    font-size: 12px;
+    text-align: right;
+}
+
+.div_account_block div
+{
+    width: 70px;
+    margin-right: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-size: 18px;
+    color: #BABABA;
+}

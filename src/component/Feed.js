@@ -17,7 +17,7 @@ const Feed = () =>
                 <Route path={"/found_form"}
                        exact render = {(args) => <LostFoundForm {...args}/>}/>
             </Switch>*/}
-            <NewPostForm/>
+            <Profile/>
         </div>
     );
 };
