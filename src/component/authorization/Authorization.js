@@ -12,7 +12,7 @@ const Authorization = () =>
             <div className = {style.div_authorization}>
                 <img className = {style.img_logo} src = {LOGO_MAIN}/>
                 <span className = {style.btn_close}>
-                        <i className = "fas fa-times"></i>
+                        <i className = "fas fa-times"/>
                     </span>
                 <div className = {style.div_fb_auth}>
                     <p className = {style.p_welcome}>

@@ -1,12 +1,15 @@
-import React from 'react';
+import React, {useContext, useReducer, useState} from 'react';
 import style from "../module/home.module.css";
 import LOGO_SEARCH from "../images/buttons/logo_button_search.png";
+import {CONTEXT} from "../store/context";
 import Authorization from "./authorization/Authorization";
-import {Route, Link} from "react-router-dom";
-import {BASE_URL} from "../utils/constants";
+import {accountReducer} from "../store/reducers/reducer_account";
+import {AUTH_TRIGGER} from "../utils/constants";
 
 const Start = () =>
 {
+    const [state, dispatch] = useReducer(accountReducer, useContext(CONTEXT));
+
     return (
         <div>
             <main className = {`container ${style.section_main}`}>
@@ -24,7 +27,8 @@ const Start = () =>
                         <button className = {style.button_found}>I found a pet!</button>
                     </div>
                     <p className = {style.p_join}>I’m okay, just want to
-                        <span className = {"color_green"}> JOIN </span>
+                        <a className = {"color_green"}
+                              onClick = {() => dispatch({type: AUTH_TRIGGER})}> JOIN </a>
                                                   the pawsome community!</p>
                 </div>
             </main>
@@ -69,7 +73,10 @@ const Start = () =>
                 </div>
             </section>
             <section>
-                {/*<Authorization/>*/}
+                {
+                    state.authViewTrigger !== false &&
+                    <Authorization/>
+                }
             </section>
         </div>
     );
