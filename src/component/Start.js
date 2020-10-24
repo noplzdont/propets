@@ -1,4 +1,4 @@
-import React, {useContext, useReducer, useState} from 'react';
+import React, {useContext, useEffect, useReducer, useState} from 'react';
 import style from "../module/home.module.css";
 import LOGO_SEARCH from "../images/buttons/logo_button_search.png";
 import {CONTEXT} from "../store/context";
@@ -8,7 +8,15 @@ import {AUTH_TRIGGER} from "../utils/constants";
 
 const Start = () =>
 {
-    const [state, dispatch] = useReducer(accountReducer, useContext(CONTEXT));
+    const value = useContext(CONTEXT);
+    const [state, dispatch] = useReducer(accountReducer, value);
+
+    /*const [authView, setAuthView] = useState();
+
+    useEffect(() => {
+        state.authViewTrigger === true && setAuthView(<Authorization/>);
+        console.log(state.authViewTrigger);
+    }, [state.authViewTrigger]);*/
 
     return (
         <div>
@@ -20,15 +28,18 @@ const Start = () =>
                         community
                     </h2>
                     <div className = {style.div_buttons}>
-                        <button className = {`d-flex align-items-center justify-content-between ${style.button_lost}`}>
+                        <button className = {`d-flex align-items-center justify-content-between ${style.button_lost}`}
+                                onClick = {() => dispatch({type: AUTH_TRIGGER})}>
                             I lost my pet!
                             <img className = {style.btn_img_search} src = {LOGO_SEARCH} alt = ''/>
                         </button>
-                        <button className = {style.button_found}>I found a pet!</button>
+                        <button className = {style.button_found}
+                                onClick = {() => dispatch({type: AUTH_TRIGGER})}>I found a pet!
+                        </button>
                     </div>
                     <p className = {style.p_join}>I’m okay, just want to
                         <a className = {"color_green"}
-                              onClick = {() => dispatch({type: AUTH_TRIGGER})}> JOIN </a>
+                           onClick = {() => dispatch({type: AUTH_TRIGGER})}> JOIN </a>
                                                   the pawsome community!</p>
                 </div>
             </main>
@@ -74,8 +85,9 @@ const Start = () =>
             </section>
             <section>
                 {
-                    state.authViewTrigger !== false &&
-                    <Authorization/>
+                    /*authView*/
+                    state.authViewTrigger === true &&
+                        <Authorization/>
                 }
             </section>
         </div>
