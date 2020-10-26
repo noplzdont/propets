@@ -18,6 +18,9 @@ const Feed = () =>
                        exact render = {(args) => <LostFoundForm {...args}/>}/>
             </Switch>*/}
             <Profile/>
+            <Profile/>
+            <Profile/>
+            <Profile/>
         </div>
     );
 };

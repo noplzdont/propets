@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import "_variables";
 
 .jumbotron
 {
@@ -125,33 +126,36 @@ ol
 li
 {
     margin-bottom: 15px;
+    &:before
+    {
+        content: " ";
+        background-color: #669885;
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+        border-radius: 50%;
+        vertical-align: middle;
+        margin-right: 15px;
+    }
 }
 
-li::before
-{
-    content: " ";
-    background-color: #669885;
-    width: 10px;
-    height: 10px;
-    display: inline-block;
-    border-radius: 50%;
-    vertical-align: middle;
-    margin-right: 15px;
-}
 
 .section_coming_soon
 {
     padding-top: 15px;
     padding-bottom: 15px;
-    background-color: #FF6F61;
+    background-color: $lightRed;
 
     font-family: Montserrat, serif;
     color: #FFFFFF;
 }
 
-.coming_soon_content
+.coming_soon
 {
-    height: 125px;
+    &_content
+    {
+        height: 125px;
+    }
 }
 
 .coming_soon_title

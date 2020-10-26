@@ -1,17 +1,22 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import style from "../../module/authorization.module.css";
 import LOGO_MAIN from "../../images/logo_main_large.png";
 import LOGO_FACEBOOK from "../../images/logo_facebook.svg";
 import LOGO_PAW from "../../images/buttons/logo_button_found.png";
 import Authform from "./Auth_form";
+import {store} from "../../store/store";
+import {AUTH_TRIGGER} from "../../utils/constants";
 
 const Authorization = () =>
 {
+    const value = useContext(store);
+
     return (
         <div className = {style.section_authorization}>
             <div className = {style.div_authorization}>
                 <img className = {style.img_logo} src = {LOGO_MAIN}/>
-                <span className = {style.btn_close}>
+                <span className = {style.btn_close}
+                      onClick = {() => value.dispatch({type: AUTH_TRIGGER})}>
                         <i className = "fas fa-times"/>
                     </span>
                 <div className = {style.div_fb_auth}>
@@ -35,7 +40,10 @@ const Authorization = () =>
                                                        accordance with
                         <span> these terms.</span></p>
                     <div>
-                        <button className = {style.btn_cancel}>Cancel</button>
+                        <button className = {style.btn_cancel}
+                                onClick = {() => value.dispatch({type: AUTH_TRIGGER})}>
+                            Cancel
+                        </button>
                         <button className = {style.btn_submit}>
                             <img className = {style.img_submit} src = {LOGO_PAW}/>
                             Submit

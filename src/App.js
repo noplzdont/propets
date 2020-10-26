@@ -3,25 +3,18 @@ import './App.css';
 import Header from "./component/Header";
 import Footer from "./component/Footer";
 import Content from "./component/Content";
-import {CONTEXT} from "./store/context";
+import {StateProvider} from "./store/store";
 
 function App()
 {
-    const initialState =
-        {
-            authViewTrigger: false
-        }
-
-    const [state, setState] = useState(initialState);
-
     return (
-        <CONTEXT.Provider value={state}>
+        <StateProvider>
             <div className = "mainframe">
                 <Header/>
                 <Content/>
                 <Footer/>
             </div>
-        </CONTEXT.Provider>
+        </StateProvider>
     );
 }
 

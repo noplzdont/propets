@@ -1,22 +1,22 @@
 import React, {useContext, useEffect, useReducer, useState} from 'react';
-import style from "../module/home.module.css";
+import style from "../module/home.module.scss";
 import LOGO_SEARCH from "../images/buttons/logo_button_search.png";
-import {CONTEXT} from "../store/context";
+import {store} from "../store/store";
 import Authorization from "./authorization/Authorization";
-import {accountReducer} from "../store/reducers/reducer_account";
 import {AUTH_TRIGGER} from "../utils/constants";
 
 const Start = () =>
 {
-    const value = useContext(CONTEXT);
-    const [state, dispatch] = useReducer(accountReducer, value);
-
-    /*const [authView, setAuthView] = useState();
+    const value = useContext(store);
+    const [authView, setAuthView] = useState();
 
     useEffect(() => {
-        state.authViewTrigger === true && setAuthView(<Authorization/>);
-        console.log(state.authViewTrigger);
-    }, [state.authViewTrigger]);*/
+        value.state.authViewTrigger === false && setAuthView(undefined);
+        value.state.authViewTrigger === false && document.querySelector("body").classList.remove("noScrollBody");
+
+        value.state.authViewTrigger === true && setAuthView(<Authorization/>);
+        value.state.authViewTrigger === true && document.querySelector("body").classList.add("noScrollBody");
+    }, [value.state.authViewTrigger]);
 
     return (
         <div>
@@ -29,17 +29,17 @@ const Start = () =>
                     </h2>
                     <div className = {style.div_buttons}>
                         <button className = {`d-flex align-items-center justify-content-between ${style.button_lost}`}
-                                onClick = {() => dispatch({type: AUTH_TRIGGER})}>
+                                onClick = {() => value.dispatch({type: AUTH_TRIGGER})}>
                             I lost my pet!
                             <img className = {style.btn_img_search} src = {LOGO_SEARCH} alt = ''/>
                         </button>
                         <button className = {style.button_found}
-                                onClick = {() => dispatch({type: AUTH_TRIGGER})}>I found a pet!
+                                onClick = {() => value.dispatch({type: AUTH_TRIGGER})}>I found a pet!
                         </button>
                     </div>
                     <p className = {style.p_join}>I’m okay, just want to
                         <a className = {"color_green"}
-                           onClick = {() => dispatch({type: AUTH_TRIGGER})}> JOIN </a>
+                           onClick = {() => value.dispatch({type: AUTH_TRIGGER})}> JOIN </a>
                                                   the pawsome community!</p>
                 </div>
             </main>
@@ -85,9 +85,7 @@ const Start = () =>
             </section>
             <section>
                 {
-                    /*authView*/
-                    state.authViewTrigger === true &&
-                        <Authorization/>
+                    authView
                 }
             </section>
         </div>

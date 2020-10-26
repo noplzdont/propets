@@ -16,6 +16,8 @@
 
     backdrop-filter: blur(10px);
     overflow-y: scroll;
+
+    z-index: 120;
 }
 
 .div_authorization
