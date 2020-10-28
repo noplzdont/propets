@@ -1,4 +1,4 @@
-import {AUTH_FORM_TRIGGER, AUTH_TRIGGER} from "../../utils/constants";
+import {AUTH_FORM_TRIGGER, AUTH_TRIGGER, LOGIN, REGISTER} from "../../utils/constants";
 
 export const reducer = (state, action) =>
 {
@@ -8,6 +8,10 @@ export const reducer = (state, action) =>
             return {...state, authViewTrigger: !state.authViewTrigger};
         case AUTH_FORM_TRIGGER:
             return {...state, authViewFormTrigger: action.payload};
+        case REGISTER:
+        case LOGIN:
+            localStorage.setItem('token', action.token);
+            return {...state, ...action.payload, token: action.token};
         default:
             throw new Error("Unknown action type " + action.type);
     }

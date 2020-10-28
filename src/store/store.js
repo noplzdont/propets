@@ -5,7 +5,15 @@ import {LOGIN} from "../utils/constants";
 
 const initialState = {
     authViewTrigger: false,
-    authViewFormTrigger: LOGIN
+    authViewFormTrigger: LOGIN,
+    account: {
+        email: "email",
+        password: "password",
+        name: "name",
+        avatar: "avatar",
+        phone: null,
+        roles: []
+    }
 };
 
 const store = React.createContext(initialState);

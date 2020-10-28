@@ -1,15 +1,53 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import style from "../../module/authorization.module.css";
 import LOGO_MAIN from "../../images/logo_main_large.png";
 import LOGO_FACEBOOK from "../../images/logo_facebook.svg";
 import LOGO_PAW from "../../images/buttons/logo_button_found.png";
 import Authform from "./Auth_form";
 import {store} from "../../store/store";
-import {AUTH_TRIGGER} from "../../utils/constants";
+import {AUTH_TRIGGER, CREATE_TOKEN, LOGIN, REGISTER} from "../../utils/constants";
+import {actionLogin, actionRegister} from "../../store/actions/actions";
+
+export const AUTH_FUNC_CONTEXT = React.createContext({});
 
 const Authorization = () =>
 {
     const value = useContext(store);
+
+    const [loginData, setLoginData] = useState({
+        email: "",
+        password: ""
+    });
+    const [registerData, setRegisterData] = useState({
+        name: "",
+        email: "",
+        password: "",
+        passwordDouble: ""
+    });
+
+    const handleSubmitClick = () =>
+    {
+        if (value.authViewFormTrigger === LOGIN)
+        {
+            let token = CREATE_TOKEN(loginData.email, loginData.password);
+            value.dispatch(actionLogin(token));
+        }
+
+        if (value.authViewFormTrigger === REGISTER)
+        {
+            let tag = document.getElementById("password_confirmation");
+
+            if (registerData.password !== registerData.passwordDouble)
+            {
+                tag.setCustomValidity("Passwords Don't Match");
+            }
+            else
+            {
+                tag.setCustomValidity('');
+                value.dispatch(actionRegister(registerData));
+            }
+        }
+    }
 
     return (
         <div className = {style.section_authorization}>
@@ -31,9 +69,14 @@ const Authorization = () =>
                         Enter with Facebook
                     </button>
                 </div>
-                <div>
-                    <Authform/>
-                </div>
+                <AUTH_FUNC_CONTEXT.Provider value = {{
+                    loginData, setLoginData,
+                    registerData, setRegisterData
+                }}>
+                    <div>
+                        <Authform/>
+                    </div>
+                </AUTH_FUNC_CONTEXT.Provider>
                 <div className = {style.div_buttons_action}>
                     <p className = {style.p_agreement}>By clicking “Submit”, you agree to us processing your information
                                                        in
@@ -44,7 +87,8 @@ const Authorization = () =>
                                 onClick = {() => value.dispatch({type: AUTH_TRIGGER})}>
                             Cancel
                         </button>
-                        <button className = {style.btn_submit}>
+                        <button className = {style.btn_submit}
+                                onClick = {handleSubmitClick}>
                             <img className = {style.img_submit} src = {LOGO_PAW}/>
                             Submit
                         </button>

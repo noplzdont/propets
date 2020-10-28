@@ -1,5 +1,6 @@
 /*URLs--------------------------------------------------*/
-export const BASE_URL = "http://localhost:3000";
+export const ROUTE_URL = "http://localhost:3000";
+export const REQUEST_URL = "https://propets-app.herokuapp.com"
 
 /*ACTIONs--------------------------------------------------*/
 /*Accounting*/
