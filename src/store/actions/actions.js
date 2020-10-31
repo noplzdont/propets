@@ -5,13 +5,21 @@ export const actionRegister = (account) =>
     const token = CREATE_TOKEN(account.email, account.password);
     let payload = null;
 
+    console.log("Action Started!");
+
     fetch(`${REQUEST_URL}/account/en/v1/registration`, {
         method: 'Post',
-        headers: {'Content-Type': 'application/json'},
+        headers: {
+            'Content-Type': 'application/json',
+            "Authorization": token
+        },
         body: JSON.stringify(account)
     })
         .then(response =>
         {
+            console.log("Fetch responded!");
+            console.log(response.json());
+
             if (response.ok)
             {
                 return response.json();
@@ -30,6 +38,8 @@ export const actionRegister = (account) =>
         {
             console.log(e.message)
         });
+
+    console.log("Action Ended!");
 
     return {
         type: REGISTER,

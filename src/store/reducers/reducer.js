@@ -10,6 +10,7 @@ export const reducer = (state, action) =>
             return {...state, authViewFormTrigger: action.payload};
         case REGISTER:
         case LOGIN:
+            console.log("LogReg reducer");
             localStorage.setItem('token', action.token);
             return {...state, ...action.payload, token: action.token};
         default:

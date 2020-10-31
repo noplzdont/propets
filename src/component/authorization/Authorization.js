@@ -1,11 +1,11 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import style from "../../module/authorization.module.css";
 import LOGO_MAIN from "../../images/logo_main_large.png";
 import LOGO_FACEBOOK from "../../images/logo_facebook.svg";
 import LOGO_PAW from "../../images/buttons/logo_button_found.png";
 import Authform from "./Auth_form";
 import {store} from "../../store/store";
-import {AUTH_TRIGGER, CREATE_TOKEN, LOGIN, REGISTER} from "../../utils/constants";
+import {AUTH_FORM_TRIGGER, AUTH_TRIGGER, CREATE_TOKEN, LOGIN, REGISTER} from "../../utils/constants";
 import {actionLogin, actionRegister} from "../../store/actions/actions";
 
 export const AUTH_FUNC_CONTEXT = React.createContext({});
@@ -25,29 +25,44 @@ const Authorization = () =>
         passwordDouble: ""
     });
 
-    const handleSubmitClick = () =>
+    const handleSubmitClick = async () =>
     {
-        if (value.authViewFormTrigger === LOGIN)
+        if (value.state.authViewFormTrigger === LOGIN)
         {
+            console.log("Action Log Called!");
+
             let token = CREATE_TOKEN(loginData.email, loginData.password);
-            value.dispatch(actionLogin(token));
+            await value.dispatch(actionLogin(token));
         }
 
-        if (value.authViewFormTrigger === REGISTER)
+        if (value.state.authViewFormTrigger === REGISTER)
         {
-            let tag = document.getElementById("password_confirmation");
+            console.log("Action Reg Called!");
 
-            if (registerData.password !== registerData.passwordDouble)
-            {
-                tag.setCustomValidity("Passwords Don't Match");
-            }
-            else
-            {
-                tag.setCustomValidity('');
-                value.dispatch(actionRegister(registerData));
-            }
+            await value.dispatch(actionRegister(registerData));
+            //let tag = document.getElementById("password_confirmation");
+
+            /* if (registerData.password !== registerData.passwordDouble)
+             {
+                 tag.setCustomValidity("Passwords Don't Match");
+             }
+             else
+             {
+                 tag.setCustomValidity('');
+                 value.dispatch(actionRegister(registerData));
+             }*/
         }
+
+        await console.log(value.state.account);
     }
+
+    useEffect(() =>
+    {
+        return () => value.dispatch({
+            type: AUTH_FORM_TRIGGER,
+            payload: LOGIN
+        });
+    }, []);
 
     return (
         <div className = {style.section_authorization}>

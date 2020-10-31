@@ -160,7 +160,7 @@
     width: 100%;
 }
 
-.btn_sign_up
+.btn_sign_active
 {
     width: 50%;
     height: 34px;
@@ -172,12 +172,12 @@
     color: #FFFFFF;
 }
 
-.btn_sign_in
+.btn_sign_passive
 {
     width: 50%;
     height: 34px;
 
-    background: #84B6A3;
+    background: #BABABA;
     border: 0;
     font-family: Montserrat, serif;
     font-size: 16px;
