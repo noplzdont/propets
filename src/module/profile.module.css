@@ -30,7 +30,7 @@
     flex-direction: row;
 }
 
-.button_profile
+.button_profile_active
 {
     margin: 0;
     width: 50%;
@@ -44,14 +44,14 @@
     color: #FFFFFF;
 }
 
-.button_activities
+.button_profile_passive
 {
     margin: 0;
     width: 50%;
     height: 35px;
 
     border: 0;
-    background-color: #669885;
+    background-color: #BABABA;
 
     font-family: Montserrat, serif;
     font-size: 16px;
@@ -60,7 +60,7 @@
 
 .section_profile
 {
-    padding: 0;
+    padding-bottom: 10px;
 
     box-shadow: 0 3px 6px #00000029;
 }
@@ -71,6 +71,7 @@
     height: 235px;
     padding-top: 25px;
     padding-left: 15px;
+
 
     display: flex;
     flex-direction: column;
@@ -160,7 +161,8 @@
 
 .div_save_btn_wrapper
 {
-    margin-top: 30px;
+    margin-top: 10px;
+    padding-right: 10px;
 
     display: flex;
     flex-direction: row;

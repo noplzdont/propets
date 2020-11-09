@@ -1,4 +1,4 @@
-import {AUTH_FORM_TRIGGER, AUTH_TRIGGER, LOGIN, REGISTER} from "../../utils/constants";
+import {AUTH_FORM_TRIGGER, AUTH_TRIGGER, LOGIN, PROFILE_VIEW_TRIGGER, REGISTER} from "../../utils/constants";
 
 export const reducer = (state, action) =>
 {
@@ -8,6 +8,8 @@ export const reducer = (state, action) =>
             return {...state, authViewTrigger: !state.authViewTrigger};
         case AUTH_FORM_TRIGGER:
             return {...state, authViewFormTrigger: action.payload};
+        case PROFILE_VIEW_TRIGGER:
+            return {...state, profileViewTrigger: action.payload};
         case REGISTER:
         case LOGIN:
             console.log("LogReg reducer");

@@ -53,12 +53,9 @@ const Authform = () =>
                     Sign Up
                 </button>
             </div>
-            <div>
                 {
                     authView
                 }
-
-            </div>
         </div>
     );
 };

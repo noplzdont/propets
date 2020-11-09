@@ -31,7 +31,7 @@ const ProfileData = () =>
             <div className = {style.div_save_btn_wrapper}>
                 <button className = {style.btn_cancel}>Cancel</button>
                 <button className = {style.btn_save}>
-                    <i className = "fas fa-save"/>  Save Changes
+                    <i className = "fas fa-save"/> Save Changes
                 </button>
             </div>
         </div>

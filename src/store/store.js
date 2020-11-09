@@ -1,11 +1,13 @@
 import * as React from "react";
 import {reducer} from "./reducers/reducer";
 import {useReducer} from "react";
-import {LOGIN} from "../utils/constants";
+import {LOGIN, PROFILE, STATUS_GUEST} from "../utils/constants";
 
 const initialState = {
+    status: STATUS_GUEST,
     authViewTrigger: false,
     authViewFormTrigger: LOGIN,
+    profileViewTrigger: PROFILE,
     account: {
         email: "email",
         password: "password",
@@ -19,13 +21,6 @@ const initialState = {
 const store = React.createContext(initialState);
 
 const {Provider} = store;
-
-/*const init = (initState) =>
-{
-    return {
-        authViewTrigger: initState
-    };
-}*/
 
 const StateProvider = ({children}) =>
 {

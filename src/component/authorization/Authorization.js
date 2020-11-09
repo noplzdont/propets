@@ -25,23 +25,23 @@ const Authorization = () =>
         passwordDouble: ""
     });
 
-    const handleSubmitClick = async () =>
+    const handleSubmitClick = () =>
     {
         if (value.state.authViewFormTrigger === LOGIN)
         {
             console.log("Action Log Called!");
 
             let token = CREATE_TOKEN(loginData.email, loginData.password);
-            await value.dispatch(actionLogin(token));
+            value.dispatch(actionLogin(token));
         }
 
         if (value.state.authViewFormTrigger === REGISTER)
         {
             console.log("Action Reg Called!");
 
-            await value.dispatch(actionRegister(registerData));
-            //let tag = document.getElementById("password_confirmation");
+            value.dispatch(actionRegister(registerData));
 
+            //let tag = document.getElementById("password_confirmation");
             /* if (registerData.password !== registerData.passwordDouble)
              {
                  tag.setCustomValidity("Passwords Don't Match");
@@ -53,7 +53,7 @@ const Authorization = () =>
              }*/
         }
 
-        await console.log(value.state.account);
+        console.log(value.state.account);
     }
 
     useEffect(() =>

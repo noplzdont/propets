@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import style from "../module/footer.module.css";
 import LOGO_MAIN_LARGE from "../images/logo_main_large.png";
 import LOGO_FACEBOOK from "../images/logo_facebook.svg";
@@ -9,10 +9,12 @@ import LOGO_BUTTON_FOUND from "../images/buttons/logo_button_found.png";
 import LOGO_BUTTON_WALKING from "../images/buttons/logo_button_walking.png";
 import LOGO_BUTTON_VETHELP from "../images/buttons/logo_button_vethelp.png";
 import LOGO_BUTTON_FOSTERING from "../images/buttons/logo_button_fostering.png";
-
+import {store} from "../store/store";
 
 const Footer = () =>
 {
+    const value = useContext(store);
+
     return (
         <div className = {`jumbotron-fluid d-flex justify-content-center ${style.jumbotron}`}>
             <footer className = {`container row justify-content-between`}>

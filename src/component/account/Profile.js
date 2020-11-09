@@ -1,10 +1,40 @@
-import React from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import style from "../../module/profile.module.css";
 import ProfileData from "./Profile_data";
 import ProfileActivities from "./Profile_activities";
+import {store} from "../../store/store";
+import {ACTIVITIES, PROFILE, PROFILE_VIEW_TRIGGER} from "../../utils/constants";
 
 const Profile = () =>
 {
+    const value = useContext(store);
+    const [profileView, setProfileView] = useState(<ProfileData/>);
+    const [btnStyle, setBtnStyle] = useState({
+        profile: style.button_profile_active,
+        activities: style.button_profile_passive
+    });
+
+    useEffect(() =>
+    {
+        if (value.state.profileViewTrigger === PROFILE)
+        {
+            setProfileView(<ProfileData/>);
+            setBtnStyle({
+                profile: style.button_profile_active,
+                activities: style.button_profile_passive
+            });
+        }
+
+        if (value.state.profileViewTrigger === ACTIVITIES)
+        {
+            setProfileView(<ProfileActivities/>);
+            setBtnStyle({
+                profile: style.button_profile_passive,
+                activities: style.button_profile_active
+            });
+        }
+    }, [value.state.profileViewTrigger]);
+
     return (
         <div className = {style.div_wrapper}>
             <div className = {style.div_p_wrapper}>
@@ -13,12 +43,25 @@ const Profile = () =>
             </div>
             <section className = {style.section_profile}>
                 <div className = {style.div_button_wrapper}>
-                    <button className = {style.button_profile}>My Profile</button>
-                    <button className = {style.button_activities}>Activities</button>
+                    <button className = {btnStyle.profile}
+                            onClick = {() => value.dispatch({
+                                type: PROFILE_VIEW_TRIGGER,
+                                payload: PROFILE
+                            })}>
+                        My Profile
+                    </button>
+                    <button className = {btnStyle.activities}
+                            onClick = {() => value.dispatch({
+                                type: PROFILE_VIEW_TRIGGER,
+                                payload: ACTIVITIES
+                            })}>
+                        Activities
+                    </button>
                 </div>
                 <div>
-                    {/*<ProfileData/>*/}
-                    <ProfileActivities/>
+                    {
+                        profileView
+                    }
                 </div>
             </section>
         </div>
