@@ -11,6 +11,12 @@ const Feed = () =>
     return (
         <div className = {style.div_wrapper}>
             <PostExpandable/>
+            <PostExpandable/>
+            <PostExpandable/>
+            <PostExpandable/>
+            <PostExpandable/>
+            <PostExpandable/>
+            <PostExpandable/>
         </div>
     );
 };
