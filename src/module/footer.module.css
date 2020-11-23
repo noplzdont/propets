@@ -2,14 +2,11 @@
 
 .jumbotron
 {
-
     height: 190px;
     margin: 0;
     padding: 0;
 
     background: #669885 0% 0% padding-box;
-    box-shadow: 0px 3px 6px #00000029;
-    opacity: 1;
 }
 
 .footer

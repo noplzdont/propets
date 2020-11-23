@@ -1,19 +1,22 @@
 import React from 'react';
 import LOGO_MAIN_SMALL from "../images/logo_main_small.png";
 import style from "../module/header.module.css";
+import {VIEW_ACTIVE} from "../utils/constants";
 
-const Header = () =>
+
+const Header = (props) =>
 {
     return (
-        <div className = {`jumbotron-fluid d-flex justify-content-center mb-2 ${style.jumbotron}`}>
+        <div className = {`jumbotron-fluid d-flex justify-content-center ${style.jumbotron}`}>
             <header className = {`container row justify-content-between ${style.header}`}>
                 <div className = "col-xl-6 col-6 row d-flex align-content-center justify-content-start">
-                    <img className ={"img-fluid"} src = {LOGO_MAIN_SMALL}/>
+                    <img className ={"img-fluid"} src = {LOGO_MAIN_SMALL} alt={"LOGO_MAIN_SMALL"}/>
                 </div>
                 <div className = "col-xl-6 col-6 row d-flex align-content-center justify-content-end">
-                    <button className = {style.button}>
-                        Sign In
-                    </button>
+                        <button className = {style.button_sign_in}
+                                onClick = {() => props.headerActionViewTriggerAuth(VIEW_ACTIVE)}>
+                            Sign In
+                        </button>
                 </div>
             </header>
         </div>

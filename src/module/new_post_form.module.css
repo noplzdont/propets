@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+.div_wrapper
+{
+    width: 650px;
+}
+
+.div_p_wrapper
+{
+    margin-top: 10px;
+
+    display: flex;
+    flex-direction: row;
+
+    font-family: Montserrat, serif;
+    font-size: 16px;
+    color: #669885;
+}
+
+.div_p_wrapper p
+{
+    margin-right: 5px;
+}
+
+.section
+{
+    margin-bottom: 30px;
+    padding-top: 20px;
+    background-color: #FFFFFF;
+
+    box-shadow: 0 3px 6px #00000029;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.div_input_block
+{
+    margin-bottom: 10px;
+
+    display: flex;
+    align-content: center;
+}
+
+.input_label
+{
+    width: 90px;
+    margin: 5px 10px 0 0;
+
+    font-family: Montserrat, serif;
+    font-size: 12px;
+    text-align: right;
+    line-height: 15px;
+}
+
+.label_span
+{
+    display: block;
+
+    font-family: Montserrat, serif;
+    font-size: 10px;
+    color: #8DBFAC;
+}
+
+.input_form_text
+{
+    width: 520px;
+    height: 425px;
+
+    border: 1px solid #8DBFAC;
+
+    font-family: Montserrat, serif;
+    font-size: 12px;
+}
+
+.div_images_block
+{
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.div_photos_block
+{
+    width: 50%;
+    margin-top: 10px;
+
+    display: flex;
+}
+
+.div_photo_booth
+{
+    width: 200px;
+    height: 110px;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.img_large
+{
+    width: 150px;
+    height: 110px;
+}
+
+.div_img_column_wrapper
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.img_small
+{
+    width: 50px;
+    height: 35px;
+}
+
+.button_plus
+{
+    width: 50px;
+    height: 40px;
+
+    border: 0;
+    background-color: #669885;
+
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
+.div_upload_block
+{
+    width: 50%;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.div_upload_side_left
+{
+    width: 50%;
+    padding-top: 10px;
+}
+
+.div_upload_side_right
+{
+    width: 50%;
+    padding-top: 10px;
+}
+
+.div_dropzone
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon_upload
+{
+    font-size: 30px;
+    color: #8DBFAC;
+}
+
+.p_dragndrop
+{
+    width: 90px;
+    height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    font-family: Montserrat, serif;
+    font-size: 12px;
+    text-align: center;
+}
+
+.btn_browse
+{
+    width: 75px;
+    height: 30px;
+
+    background-color: #FFFFFF;
+    border: 1px solid #8DBFAC;
+    border-radius: 50px;
+
+    font-family: Montserrat, serif;
+    font-size: 12px;
+    color: #8DBFAC;
+}
+
+.div_image_list
+{
+    width: 140px;
+    height: 110px;
+
+    border: 1px solid #669885;
+}
+
+.div_footer_buttons
+{
+    padding-top: 20px;
+    padding-bottom: 10px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.button_profile
+{
+    width: 180px;
+    height: 45px;
+    margin-left: 10px;
+
+    background-color: azure;
+    border: 0;
+
+    font-family: Montserrat, serif;
+    font-size: 12px;
+    text-align: right;
+}
+
+.button_publish
+{
+    width: 150px;
+    height: 35px;
+    margin-right: 10px;
+
+    border: 0;
+    border-radius: 50px;
+    background-color: #669885;
+
+    font-family: Montserrat, serif;
+    font-size: 14px;
+    color: #FFFFFF;
+}
+
+.button_publish:active
+{
+    background-color: #FFFFFF;
+    color: #669885;
+    border: 1px solid #669885;
+}
+
+.button_icon
+{
+    width: 18px;
+    height: 16px;
+    margin-right: 10px;
+}

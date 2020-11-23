@@ -1,0 +1,9 @@
+.div_wrapper
+{
+    width: 680px;
+    padding: 15px 15px 15px 15px;
+    background-color: #FFFFFF;
+
+    display: flex;
+    flex-direction: column;
+}

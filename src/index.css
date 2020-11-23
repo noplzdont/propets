@@ -1,9 +1,10 @@
+.noScrollBody
+{
+    height: 100%;
+    overflow: hidden;
+}
+
 body
 {
     margin: 0;
-}
-
-.wrapper {
-    height: 100vh;
-    display: flex;
 }
