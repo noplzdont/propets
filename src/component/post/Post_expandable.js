@@ -75,13 +75,13 @@ const PostExpandable = () =>
                        data-toggle = "dropdown">
                         <i className = "fas fa-ellipsis-h"/>
                     </a>
-                    <ul className = "dropdown-menu">
+                    {/*<ul className = "dropdown-menu">
                         <li>
                             <li><a>Page 1-1</a></li>
                             <li><a>Page 1-2</a></li>
                             <li><a>Page 1-3</a></li>
                         </li>
-                    </ul>
+                    </ul>*/}
                 </div>
             </div>
             <div className = {style.div_image_wrapper}>

@@ -1,6 +1,38 @@
-import {CREATE_TOKEN, LOGIN, REGISTER, REQUEST_URL} from "../../utils/constants";
+import {
+    VIEW_TRIGGER_AUTH_FORM,
+    VIEW_TRIGGER_AUTH,
+    CREATE_TOKEN,
+    LOGIN,
+    VIEW_TRIGGER_PROFILE,
+    REGISTRATION,
+    REQUEST_URL
+} from "../../utils/constants";
 
-export const actionRegister = (account) =>
+export const actionViewTriggerAuth = (payload) =>
+    (
+        {
+            type: VIEW_TRIGGER_AUTH,
+            payload: payload
+        }
+    );
+
+export const actionViewTriggerAuthForm = (payload) =>
+    (
+        {
+            type: VIEW_TRIGGER_AUTH_FORM,
+            payload
+        }
+    );
+
+export const actionViewTriggerProfile = (payload) =>
+    (
+        {
+            type: VIEW_TRIGGER_PROFILE,
+            payload
+        }
+    )
+
+export const actionRegistration = (account) =>
 {
     console.log("Action Started!");
 
@@ -8,46 +40,43 @@ export const actionRegister = (account) =>
     let payload = null;
 
     fetch(`${REQUEST_URL}/account/en/v1/registration`, {
-            method: 'Post',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(account)
-        })
-            .then(response =>
-            {
-                console.log("Fetch responded!");
-                console.log(response.json());
+        method: 'Post',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(account)
+    })
+        .then(response =>
+        {
+            console.log("Fetch responded!");
+            console.log(response.json());
 
-                if (response.ok)
-                {
-                    return response.json();
-                }
-                else
-                {
-                    throw new Error(response.statusText);
-                }
-            })
-            .then(data =>
+            if (response.ok)
             {
-                payload = data;
-                console.log(data);
-                console.log("Action Ended!");
-            })
-            .catch(e =>
+                return response.json();
+            }
+            else
             {
-                console.log(e.message)
-            });
+                throw new Error(response.statusText);
+            }
+        })
+        .then(data =>
+        {
+            payload = data;
+            console.log(data);
+        })
+        .catch(e =>
+        {
+            console.log(e.message)
+        });
 
     console.log("Action Ended!");
 
     return {
-        type: REGISTER,
+        type: REGISTRATION,
         payload, token
     }
 }
-
-console.log("Action Ended!");
 
 export const actionLogin = (token) =>
 {

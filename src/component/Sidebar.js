@@ -1,6 +1,7 @@
 import React from 'react';
 import style from "../module/sidebar.module.css";
 
+
 const Sidebar = () =>
 {
     return (
@@ -27,8 +28,7 @@ const Sidebar = () =>
             </button>
             <div className = {style.div_acc_buttons}>
                 <button className = {style.button_account}>
-                    <span>Name</span>
-                    <span>Surname</span>
+                    {/*<span>{value.state.account.name}</span>*/}
                 </button>
                 <button className = {style.button_logout}>
                     <i className = {`fas fa-sign-out-alt ${style.button_icon}`}/>

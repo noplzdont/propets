@@ -1,22 +1,21 @@
-import React, {useContext, useEffect, useReducer, useState} from 'react';
-import style from "../module/home.module.scss";
+import React, {useEffect, useState} from 'react';
+import style from "../module/start.module.scss";
 import LOGO_SEARCH from "../images/buttons/logo_button_search.png";
-import {store} from "../store/store";
-import Authorization from "./authorization/Authorization";
-import {AUTH_TRIGGER} from "../utils/constants";
+import Authorization from "../store/containers/Authorization_container";
+import {VIEW_ACTIVE, VIEW_HIDDEN} from "../utils/constants";
 
-const Start = () =>
+const Start = (props) =>
 {
-    const value = useContext(store);
     const [authView, setAuthView] = useState();
 
-    useEffect(() => {
-        value.state.authViewTrigger === false && setAuthView(undefined);
-        value.state.authViewTrigger === false && document.querySelector("body").classList.remove("noScrollBody");
+    useEffect(() =>
+    {
+        props.startStateViewTriggerAuth === VIEW_HIDDEN && setAuthView(undefined);
+        props.startStateViewTriggerAuth === VIEW_HIDDEN && document.querySelector("body").classList.remove("noScrollBody");
 
-        value.state.authViewTrigger === true && setAuthView(<Authorization/>);
-        value.state.authViewTrigger === true && document.querySelector("body").classList.add("noScrollBody");
-    }, [value.state.authViewTrigger]);
+        props.startStateViewTriggerAuth === VIEW_ACTIVE && setAuthView(<Authorization/>);
+        props.startStateViewTriggerAuth === VIEW_ACTIVE && document.querySelector("body").classList.add("noScrollBody");
+    }, [props.startStateViewTriggerAuth]);
 
     return (
         <div>
@@ -29,17 +28,17 @@ const Start = () =>
                     </h2>
                     <div className = {style.div_buttons}>
                         <button className = {`d-flex align-items-center justify-content-between ${style.button_lost}`}
-                                onClick = {() => value.dispatch({type: AUTH_TRIGGER})}>
+                                onClick = {() => props.startActionViewTriggerAuth(VIEW_ACTIVE)}>
                             I lost my pet!
-                            <img className = {style.btn_img_search} src = {LOGO_SEARCH} alt = ''/>
+                            <img className = {style.btn_img_search} src = {LOGO_SEARCH} alt={"LOGO_SEARCH"}/>
                         </button>
                         <button className = {style.button_found}
-                                onClick = {() => value.dispatch({type: AUTH_TRIGGER})}>I found a pet!
+                                onClick = {() => props.startActionViewTriggerAuth(VIEW_ACTIVE)}>I found a pet!
                         </button>
                     </div>
                     <p className = {style.p_join}>I’m okay, just want to
-                        <a className = {"color_green"}
-                           onClick = {() => value.dispatch({type: AUTH_TRIGGER})}> JOIN </a>
+                        <span className = {"color_green"}
+                           onClick = {() => props.startActionViewTriggerAuth(VIEW_ACTIVE)}> JOIN </span>
                                                   the pawsome community!</p>
                 </div>
             </main>

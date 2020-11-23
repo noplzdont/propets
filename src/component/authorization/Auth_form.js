@@ -1,13 +1,11 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import style from "../../module/authorization.module.css";
 import AuthFormRegistration from "./Auth_form_registration";
 import AuthFormLogin from "./Auth_form_login";
-import {store} from "../../store/store";
-import {AUTH_FORM_TRIGGER, LOGIN, REGISTER} from "../../utils/constants";
+import {LOGIN, REGISTRATION} from "../../utils/constants";
 
-const Authform = () =>
+const AuthForm = (props) =>
 {
-    const value = useContext(store);
     const [authView, setAuthView] = useState(<AuthFormLogin/>);
     const [btnStyle, setBtnStyle] = useState({
         signIn: style.btn_sign_active,
@@ -16,7 +14,7 @@ const Authform = () =>
 
     useEffect(() =>
     {
-        if (value.state.authViewFormTrigger === LOGIN)
+        if (props.authformStateViewTriggerAuthForm === LOGIN)
         {
             setAuthView(<AuthFormLogin/>);
             setBtnStyle({
@@ -25,7 +23,7 @@ const Authform = () =>
             });
         }
 
-        if (value.state.authViewFormTrigger === REGISTER)
+        if (props.authformStateViewTriggerAuthForm === REGISTRATION)
         {
             setAuthView(<AuthFormRegistration/>);
             setBtnStyle({
@@ -33,23 +31,17 @@ const Authform = () =>
                 signUp: style.btn_sign_active
             });
         }
-    }, [value.state.authViewFormTrigger]);
+    }, [props.authformStateViewTriggerAuthForm]);
 
     return (
         <div>
             <div className = {style.div_buttons_flag}>
                 <button className = {btnStyle.signIn}
-                        onClick = {() => value.dispatch({
-                            type: AUTH_FORM_TRIGGER,
-                            payload: LOGIN
-                        })}>
+                        onClick = {() => props.authformActionViewTriggerAuthForm(LOGIN)}>
                     Sign In
                 </button>
                 <button className = {btnStyle.signUp}
-                        onClick = {() => value.dispatch({
-                            type: AUTH_FORM_TRIGGER,
-                            payload: REGISTER
-                        })}>
+                        onClick = {() => props.authformActionViewTriggerAuthForm(REGISTRATION)}>
                     Sign Up
                 </button>
             </div>
@@ -60,4 +52,4 @@ const Authform = () =>
     );
 };
 
-export default Authform;
+export default AuthForm;

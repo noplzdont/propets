@@ -1,7 +1,7 @@
 import React from 'react';
-import Start from "./Start";
 import {Route, Switch} from "react-router-dom";
 import Main from "./Main";
+import Start from "../store/containers/Start_container";
 
 const Content = () =>
 {

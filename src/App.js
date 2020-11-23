@@ -1,20 +1,16 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './App.css';
-import Header from "./component/Header";
 import Footer from "./component/Footer";
 import Content from "./component/Content";
-import {StateProvider} from "./store/store";
-
+import Header from "./store/containers/Header_container";
 function App()
 {
     return (
-        <StateProvider>
             <div className = "mainframe">
                 <Header/>
                 <Content/>
                 <Footer/>
             </div>
-        </StateProvider>
     );
 }
 

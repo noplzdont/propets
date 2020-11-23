@@ -1,32 +1,27 @@
-import * as React from "react";
+import {applyMiddleware, createStore} from "redux";
 import {reducer} from "./reducers/reducer";
-import {useReducer} from "react";
-import {LOGIN, PROFILE, STATUS_GUEST} from "../utils/constants";
+import {LOGIN, PROFILE, STATUS_GUEST, VIEW_HIDDEN} from "../utils/constants";
+import thunk from "redux-thunk";
+import {logger} from "redux-logger/src";
 
 const initialState = {
+    viewTriggerAuth: VIEW_HIDDEN,
+    viewTriggerAuthForm: LOGIN,
+    viewTriggerProfile: PROFILE,
+    //--------------------
     status: STATUS_GUEST,
-    authViewTrigger: false,
-    authViewFormTrigger: LOGIN,
-    profileViewTrigger: PROFILE,
     account: {
-        email: "email",
+        email: "email@email.com",
         password: "password",
-        name: "name",
-        avatar: "avatar",
-        phone: null,
-        roles: []
+        name: "Name Surname",
+        avatar: "https://www.gravatar.com/avatar/0?d=mp",
+        phone: "0580000000",
+        roles: [
+            "User"
+        ]
     }
 };
 
-const store = React.createContext(initialState);
+const store = createStore(reducer, initialState, applyMiddleware(thunk, logger));
 
-const {Provider} = store;
-
-const StateProvider = ({children}) =>
-{
-    const [state, dispatch] = useReducer(reducer, store);
-
-    return <Provider value = {{state, dispatch}}>{children}</Provider>
-}
-
-export {store, StateProvider};
+export default store;
