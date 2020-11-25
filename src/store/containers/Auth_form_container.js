@@ -1,5 +1,5 @@
 import {connect} from "react-redux";
-import {actionViewTriggerAuthForm} from "../actions/actions";
+import {actionViewTriggerAuthForm} from "../actions/actions_view";
 import AuthForm from "../../component/authorization/Auth_form";
 
 const mapStateToProps = (state) =>

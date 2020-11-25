@@ -1,6 +1,6 @@
 import Profile from "../../component/account/Profile";
 import {connect} from "react-redux";
-import {actionViewTriggerProfile} from "../actions/actions";
+import {actionViewTriggerProfile} from "../actions/actions_view";
 
 const mapStateToProps = (state) =>
 {

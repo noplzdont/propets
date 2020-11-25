@@ -10,6 +10,9 @@ export const CREATE_TOKEN = (user, password) =>
 export const VIEW_ACTIVE = "ACTIVE";
 export const VIEW_HIDDEN = "HIDDEN";
 
+export const REQUEST_PENDING = "PENDING";
+export const REQUEST_SUCCESS = "SUCCESS";
+
 export const STATUS_GUEST = "STATUS_GUEST";
 export const STATUS_USER = "STATUS_USER";
 export const STATUS_ADMIN = "STATUS_ADMIN";

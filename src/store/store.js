@@ -8,8 +8,9 @@ const initialState = {
     viewTriggerAuth: VIEW_HIDDEN,
     viewTriggerAuthForm: LOGIN,
     viewTriggerProfile: PROFILE,
+    requestStatus: null,
     //--------------------
-    status: STATUS_GUEST,
+    userStatus: STATUS_GUEST,
     account: {
         email: "email@email.com",
         password: "password",

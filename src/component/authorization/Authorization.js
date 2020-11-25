@@ -4,7 +4,7 @@ import LOGO_MAIN from "../../images/logo_main_large.png";
 import LOGO_FACEBOOK from "../../images/logo_facebook.svg";
 import LOGO_PAW from "../../images/buttons/logo_button_found.png";
 import AuthForm from "../../store/containers/Auth_form_container";
-import {CREATE_TOKEN, LOGIN, REGISTRATION, VIEW_HIDDEN} from "../../utils/constants";
+import {LOGIN, REGISTRATION, VIEW_HIDDEN} from "../../utils/constants";
 
 export const AUTH_FUNC_CONTEXT = React.createContext({});
 
@@ -23,22 +23,14 @@ const Authorization = (props) =>
 
     const handleSubmitClick = () =>
     {
-        if (props.authViewFormState === LOGIN)
-        {
-            let token = CREATE_TOKEN(loginData.email, loginData.password);
-            props.login(token);
-        }
-
-        if (props.authViewFormState === REGISTRATION)
-        {
-            props.register_new(registerData);
-        }
+        props.authorizationStateViewTriggerAuthForm === LOGIN && props.authorizationActionLogin(loginData);
+        props.authorizationStateViewTriggerAuthForm === REGISTRATION && props.authorizationActionRegistration(registerData);
     }
 
     useEffect(() =>
     {
         return () => props.authorizationActionViewTriggerAuthForm(LOGIN);
-    });
+    }, []);
 
     return (
         <div className = {style.section_authorization}>

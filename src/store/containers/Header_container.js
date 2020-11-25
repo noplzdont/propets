@@ -1,4 +1,4 @@
-import {actionViewTriggerAuth} from "../actions/actions";
+import {actionViewTriggerAuth} from "../actions/actions_view";
 import Header from "../../component/Header";
 import {connect} from "react-redux";
 
