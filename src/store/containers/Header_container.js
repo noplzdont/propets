@@ -2,6 +2,13 @@ import {actionViewTriggerAuth} from "../actions/actions_view";
 import Header from "../../component/Header";
 import {connect} from "react-redux";
 
+const mapStateToProps = (state) =>
+{
+    return {
+        token: state.token
+    }
+}
+
 const mapDispatchToProps = (dispatch) =>
 {
     return {
@@ -9,4 +16,4 @@ const mapDispatchToProps = (dispatch) =>
     }
 }
 
-export default connect(null, mapDispatchToProps)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

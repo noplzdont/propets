@@ -1,6 +1,8 @@
 /*URLs--------------------------------------------------*/
 export const ROUTE_URL = "http://localhost:3000";
 export const REQUEST_URL = "https://propets-app.herokuapp.com"
+export const PAGE_START = "start";
+export const PAGE_HOME = "home";
 
 export const CREATE_TOKEN = (user, password) =>
 {

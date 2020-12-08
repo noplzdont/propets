@@ -20,7 +20,8 @@ const initialState = {
         roles: [
             "User"
         ]
-    }
+    },
+    token: null
 };
 
 const store = createStore(reducer, initialState, applyMiddleware(thunk, logger));

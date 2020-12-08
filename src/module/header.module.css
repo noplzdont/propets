@@ -16,10 +16,20 @@
     z-index: 110;
 }
 
+.jumbotron.token
+{
+    background: #FFFFFF 0 0 padding-box;
+}
+
 .header
 {
     width: 100vw;
     height: 70px;
+}
+
+.jumbotron.token .jumbotron_img
+{
+    filter: invert(73%) sepia(6%) saturate(1803%) hue-rotate(106deg) brightness(76%) contrast(80%);
 }
 
 .button_sign_in

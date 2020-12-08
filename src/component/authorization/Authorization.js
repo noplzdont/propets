@@ -4,12 +4,17 @@ import LOGO_MAIN from "../../images/logo_main_large.png";
 import LOGO_FACEBOOK from "../../images/logo_facebook.svg";
 import LOGO_PAW from "../../images/buttons/logo_button_found.png";
 import AuthForm from "../../store/containers/Auth_form_container";
-import {LOGIN, REGISTRATION, VIEW_HIDDEN} from "../../utils/constants";
+import {LOGIN, PAGE_HOME, REGISTRATION, REQUEST_PENDING, VIEW_HIDDEN} from "../../utils/constants";
+import {Link, Redirect} from "react-router-dom";
+import Spinner from 'react-bootstrap/Spinner';
 
 export const AUTH_FUNC_CONTEXT = React.createContext({});
 
 const Authorization = (props) =>
 {
+   /* props.authorizationStateToken !== null && return <Redirect to={`/${PAGE_HOME}`}/>;*/
+
+    const [spinner, setSpinner] = useState();
     const [loginData, setLoginData] = useState({
         email: "",
         password: ""
@@ -29,13 +34,20 @@ const Authorization = (props) =>
 
     useEffect(() =>
     {
-        return () => props.authorizationActionViewTriggerAuthForm(LOGIN);
-    }, []);
+        props.authorizationStateRequestStatus === REQUEST_PENDING && setSpinner(
+            <div className={style.spinner}>
+                <Spinner animation = "border" role = "status">
+                    <span className = "sr-only">Loading...</span>
+                </Spinner>
+            </div>
+        );
+        props.authorizationStateRequestStatus === null && setSpinner(null);
+    }, [props.authorizationStateRequestStatus]);
 
     return (
         <div className = {style.section_authorization}>
             <div className = {style.div_authorization}>
-                <img className = {style.img_logo} src = {LOGO_MAIN} alt={"LOGO_MAIN"}/>
+                <img className = {style.img_logo} src = {LOGO_MAIN} alt = {"LOGO_MAIN"}/>
                 <span className = {style.btn_close}
                       onClick = {() => props.authorizationActionViewTriggerAuth(VIEW_HIDDEN)}>
                         <i className = "fas fa-times"/>
@@ -48,7 +60,7 @@ const Authorization = (props) =>
                         </span> Please sign in / sign up to continue or
                     </p>
                     <button className = {style.btn_facebook}>
-                        <img className = {style.img_facebook} src = {LOGO_FACEBOOK} alt={"LOGO_FACEBOOK"}/>
+                        <img className = {style.img_facebook} src = {LOGO_FACEBOOK} alt = {"LOGO_FACEBOOK"}/>
                         Enter with Facebook
                     </button>
                 </div>
@@ -70,14 +82,19 @@ const Authorization = (props) =>
                                 onClick = {() => props.authorizationActionViewTriggerAuth(VIEW_HIDDEN)}>
                             Cancel
                         </button>
-                        <button className = {style.btn_submit}
-                                onClick = {handleSubmitClick}>
-                            <img className = {style.img_submit} src = {LOGO_PAW} alt={"LOGO_PAW"}/>
-                            Submit
-                        </button>
+                            <button className = {style.btn_submit}
+                                    onClick = {handleSubmitClick}>
+                                <img className = {style.img_submit} src = {LOGO_PAW} alt = {"LOGO_PAW"}/>
+                                Submit
+                            </button>
                     </div>
                 </div>
             </div>
+            <section>
+                {
+                    spinner
+                }
+            </section>
         </div>
     );
 };

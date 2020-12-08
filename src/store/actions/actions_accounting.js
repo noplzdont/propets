@@ -46,7 +46,7 @@ export const actionRegistration = (registrationData) =>
             .then(profile =>
             {
                 dispatch(actionRequestPending(null));
-                dispatch(actionResponseSuccess(profile, token))
+                dispatch(actionResponseSuccess(profile, token));
             })
             .catch(e =>
             {
@@ -60,7 +60,8 @@ export const actionLogin = (loginData) =>
 {
     let token = CREATE_TOKEN(loginData.email, loginData.password);
 
-    return (dispatch) => {
+    return (dispatch) =>
+    {
         dispatch(actionRequestPending(REQUEST_PENDING));
 
         fetch(`${REQUEST_URL}/account/en/v1/login`, {
@@ -70,19 +71,25 @@ export const actionLogin = (loginData) =>
                 'Authorization': token
             }
         })
-            .then(response => {
-                if (response.ok) {
+            .then(response =>
+            {
+                if (response.ok)
+                {
                     return response.json()
-                } else {
+                }
+                else
+                {
                     throw new Error(response.statusText);
                 }
             })
-            .then(profile => {
+            .then(profile =>
+            {
                 dispatch(actionRequestPending(null));
                 dispatch(actionResponseSuccess(profile, token))
 
             })
-            .catch(e => {
+            .catch(e =>
+            {
                 dispatch(actionRequestPending(null));
                 console.log(e.message)
             });

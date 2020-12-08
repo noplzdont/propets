@@ -19,7 +19,7 @@ export const reducer = (state, action) =>
             return {...state, viewTriggerProfile: action.payload};
         case REQUEST_SUCCESS:
             localStorage.setItem('token', action.token);
-            return {...state, ...action.account, token: action.token};
+            return {...state, account: action.account, token: action.token};
         default:
             return state;
     }
