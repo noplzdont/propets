@@ -12,8 +12,6 @@ export const AUTH_FUNC_CONTEXT = React.createContext({});
 
 const Authorization = (props) =>
 {
-   /* props.authorizationStateToken !== null && return <Redirect to={`/${PAGE_HOME}`}/>;*/
-
     const [spinner, setSpinner] = useState();
     const [loginData, setLoginData] = useState({
         email: "",
@@ -35,68 +33,77 @@ const Authorization = (props) =>
     useEffect(() =>
     {
         props.authorizationStateRequestStatus === REQUEST_PENDING && setSpinner(
-            <div className={style.spinner}>
+            <div className = {style.spinner}>
                 <Spinner animation = "border" role = "status">
                     <span className = "sr-only">Loading...</span>
                 </Spinner>
             </div>
         );
         props.authorizationStateRequestStatus === null && setSpinner(null);
+
     }, [props.authorizationStateRequestStatus]);
 
-    return (
-        <div className = {style.section_authorization}>
-            <div className = {style.div_authorization}>
-                <img className = {style.img_logo} src = {LOGO_MAIN} alt = {"LOGO_MAIN"}/>
-                <span className = {style.btn_close}
-                      onClick = {() => props.authorizationActionViewTriggerAuth(VIEW_HIDDEN)}>
+    if (localStorage.getItem("token") !== null)
+    {
+        return <Redirect to = {`/${PAGE_HOME}`}/>;
+    }
+    else
+    {
+        return (
+            <div className = {style.section_authorization}>
+                <div className = {style.div_authorization}>
+                    <img className = {style.img_logo} src = {LOGO_MAIN} alt = {"LOGO_MAIN"}/>
+                    <span className = {style.btn_close}
+                          onClick = {() => props.authorizationActionViewTriggerAuth(VIEW_HIDDEN)}>
                         <i className = "fas fa-times"/>
                     </span>
-                <div className = {style.div_fb_auth}>
-                    <p className = {style.p_welcome}>
+                    <div className = {style.div_fb_auth}>
+                        <p className = {style.p_welcome}>
                         <span style = {{
                             fontWeight: "bold"
                         }}>Welcome!
                         </span> Please sign in / sign up to continue or
-                    </p>
-                    <button className = {style.btn_facebook}>
-                        <img className = {style.img_facebook} src = {LOGO_FACEBOOK} alt = {"LOGO_FACEBOOK"}/>
-                        Enter with Facebook
-                    </button>
-                </div>
-                <AUTH_FUNC_CONTEXT.Provider value = {{
-                    loginData, setLoginData,
-                    registerData, setRegisterData
-                }}>
-                    <div>
-                        <AuthForm/>
-                    </div>
-                </AUTH_FUNC_CONTEXT.Provider>
-                <div className = {style.div_buttons_action}>
-                    <p className = {style.p_agreement}>By clicking “Submit”, you agree to us processing your information
-                                                       in
-                                                       accordance with
-                        <span> these terms.</span></p>
-                    <div>
-                        <button className = {style.btn_cancel}
-                                onClick = {() => props.authorizationActionViewTriggerAuth(VIEW_HIDDEN)}>
-                            Cancel
+                        </p>
+                        <button className = {style.btn_facebook}>
+                            <img className = {style.img_facebook} src = {LOGO_FACEBOOK} alt = {"LOGO_FACEBOOK"}/>
+                            Enter with Facebook
                         </button>
+                    </div>
+                    <AUTH_FUNC_CONTEXT.Provider value = {{
+                        loginData, setLoginData,
+                        registerData, setRegisterData
+                    }}>
+                        <div>
+                            <AuthForm/>
+                        </div>
+                    </AUTH_FUNC_CONTEXT.Provider>
+                    <div className = {style.div_buttons_action}>
+                        <p className = {style.p_agreement}>By clicking “Submit”, you agree to us processing your
+                                                           information
+                                                           in
+                                                           accordance with
+                            <span> these terms.</span></p>
+                        <div>
+                            <button className = {style.btn_cancel}
+                                    onClick = {() => props.authorizationActionViewTriggerAuth(VIEW_HIDDEN)}>
+                                Cancel
+                            </button>
                             <button className = {style.btn_submit}
                                     onClick = {handleSubmitClick}>
                                 <img className = {style.img_submit} src = {LOGO_PAW} alt = {"LOGO_PAW"}/>
                                 Submit
                             </button>
+                        </div>
                     </div>
                 </div>
+                <section>
+                    {
+                        spinner
+                    }
+                </section>
             </div>
-            <section>
-                {
-                    spinner
-                }
-            </section>
-        </div>
-    );
+        );
+    }
 };
 
 export default Authorization;
