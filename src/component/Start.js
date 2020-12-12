@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import style from "../module/start.module.scss";
 import LOGO_SEARCH from "../images/buttons/logo_button_search.png";
 import Authorization from "../store/containers/Authorization_container";
-import {VIEW_ACTIVE, VIEW_HIDDEN} from "../utils/constants";
+import {PAGE_START, VIEW_ACTIVE, VIEW_HIDDEN} from "../utils/constants";
 
 const Start = (props) =>
 {
@@ -10,6 +10,8 @@ const Start = (props) =>
 
     useEffect(() =>
     {
+        props.startActionSetCurrentPage(PAGE_START);
+
         props.startStateViewTriggerAuth === VIEW_HIDDEN && setAuthView(undefined);
         props.startStateViewTriggerAuth === VIEW_HIDDEN && document.querySelector("body").classList.remove("noScrollBody");
 

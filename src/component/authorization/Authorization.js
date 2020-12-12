@@ -4,7 +4,7 @@ import LOGO_MAIN from "../../images/logo_main_large.png";
 import LOGO_FACEBOOK from "../../images/logo_facebook.svg";
 import LOGO_PAW from "../../images/buttons/logo_button_found.png";
 import AuthForm from "../../store/containers/Auth_form_container";
-import {LOGIN, PAGE_HOME, REGISTRATION, REQUEST_PENDING, VIEW_HIDDEN} from "../../utils/constants";
+import {LOGIN, PAGE_HOME, PAGE_MAIN, REGISTRATION, REQUEST_PENDING, VIEW_HIDDEN} from "../../utils/constants";
 import {Link, Redirect} from "react-router-dom";
 import Spinner from 'react-bootstrap/Spinner';
 
@@ -45,7 +45,7 @@ const Authorization = (props) =>
 
     if (localStorage.getItem("token") !== null)
     {
-        return <Redirect to = {`/${PAGE_HOME}`}/>;
+        return <Redirect to = {`/${PAGE_MAIN}`}/>;
     }
     else
     {

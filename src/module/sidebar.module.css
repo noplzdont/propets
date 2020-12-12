@@ -58,6 +58,11 @@
     transform: translateX(-840px);
     margin-bottom: 20px;
 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
     border: 0;
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
@@ -73,6 +78,17 @@
 {
     background-color: #FFFFFF;
     color: #669885;
+}
+
+.img_avatar
+{
+    margin-right: 5px;
+    padding: 0;
+    width: 35px;
+    height: 35px;
+
+    border: 1px solid #FFFFFF;
+    border-radius: 50%;
 }
 
 .button_logout

@@ -5,7 +5,8 @@ import {connect} from "react-redux";
 const mapStateToProps = (state) =>
 {
     return {
-        token: state.token
+        headerStateToken: state.token,
+        headerStateCurrentPage: state.currentPage
     }
 }
 

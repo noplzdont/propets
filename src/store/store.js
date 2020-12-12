@@ -1,6 +1,6 @@
 import {applyMiddleware, createStore} from "redux";
 import {reducer} from "./reducers/reducer";
-import {LOGIN, PROFILE, STATUS_GUEST, VIEW_HIDDEN} from "../utils/constants";
+import {LOGIN, PAGE_START, PROFILE, STATUS_GUEST, VIEW_HIDDEN} from "../utils/constants";
 import thunk from "redux-thunk";
 import {logger} from "redux-logger/src";
 
@@ -8,6 +8,7 @@ const initialState = {
     viewTriggerAuth: VIEW_HIDDEN,
     viewTriggerAuthForm: LOGIN,
     viewTriggerProfile: PROFILE,
+    currentPage: null,
     requestStatus: null,
     //--------------------
     userStatus: STATUS_GUEST,
@@ -21,7 +22,7 @@ const initialState = {
             "User"
         ]
     },
-    token: null
+    token: localStorage.getItem("token")
 };
 
 const store = createStore(reducer, initialState, applyMiddleware(thunk, logger));

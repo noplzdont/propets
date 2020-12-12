@@ -1,4 +1,4 @@
-import {CREATE_TOKEN, REQUEST_PENDING, REQUEST_SUCCESS, REQUEST_URL} from "../../utils/constants";
+import {CREATE_TOKEN, LOGOUT, REQUEST_PENDING, REQUEST_SUCCESS, REQUEST_URL} from "../../utils/constants";
 
 const actionRequestPending = (payload) =>
     (
@@ -95,3 +95,10 @@ export const actionLogin = (loginData) =>
             });
     }
 };
+
+export const actionLogout = () =>
+    (
+        {
+            type: LOGOUT
+        }
+    );

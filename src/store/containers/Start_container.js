@@ -1,4 +1,4 @@
-import {actionViewTriggerAuth} from "../actions/actions_view";
+import {actionSetCurrentPage, actionViewTriggerAuth} from "../actions/actions_view";
 import {connect} from "react-redux";
 import Start from "../../component/Start";
 
@@ -12,7 +12,8 @@ const mapStateToProps = (state) =>
 const mapDispatchToProps = (dispatch) =>
 {
     return {
-        startActionViewTriggerAuth: (payload) => dispatch(actionViewTriggerAuth(payload))
+        startActionViewTriggerAuth: (payload) => dispatch(actionViewTriggerAuth(payload)),
+        startActionSetCurrentPage: (payload) => dispatch(actionSetCurrentPage(payload)),
     }
 }
 

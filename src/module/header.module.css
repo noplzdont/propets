@@ -32,21 +32,47 @@
     filter: invert(73%) sepia(6%) saturate(1803%) hue-rotate(106deg) brightness(76%) contrast(80%);
 }
 
-.button_sign_in
+.button
 {
     font-family: Montserrat, medium, serif;
-    background-color: #669885;
-    color: #FFFFFF;
-    width: 100px;
+
+    width: 150px;
     height: 35px;
 
-    border: 1px solid #FFFFFF;
     border-radius: 17px;
     opacity: 1;
 }
 
-.button_sign_in:active
+.button.sign_in
+{
+    background-color: #669885;
+    color: #FFFFFF;
+
+    border: 1px solid #FFFFFF;
+}
+
+.button.add_new_post
+{
+    padding-right: 30px;
+    padding-left: 30px;
+
+    background-color: #669885;
+    color: #FFFFFF;
+
+    border: 1px solid #FFFFFF;
+
+    font-size: 12px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.button:active
 {
     background-color: #FFFFFF;
     color: #669885;
 }
+
+

@@ -1,10 +1,16 @@
-import React from 'react';
-import Sidebar from "./Sidebar";
+import React, {useEffect} from 'react';
+import Sidebar from "../store/containers/Sidebar_container";
 import Feed from "./Feed";
 import Sidespace from "./Sidespace";
+import {PAGE_HOME, PAGE_MAIN} from "../utils/constants";
 
-const Main = () =>
+const Main = (props) =>
 {
+    useEffect(() =>
+    {
+        props.mainActionSetCurrentPage(PAGE_MAIN);
+    })
+
     return (
         <div style = {{
             backgroundColor: "#669885",

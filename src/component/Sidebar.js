@@ -1,7 +1,9 @@
 import React from 'react';
 import style from "../module/sidebar.module.css";
+import {Link} from "react-router-dom";
+import {PAGE_START} from "../utils/constants";
 
-const Sidebar = () =>
+const Sidebar = (props) =>
 {
     return (
         <div className = {style.div_wrapper}>
@@ -27,12 +29,16 @@ const Sidebar = () =>
             </button>
             <div className = {style.div_acc_buttons}>
                 <button className = {style.button_account}>
-                    {/*<span>{value.state.account.name}</span>*/}
+                    <img className = {style.img_avatar} src = {props.sidebarStateAccount.avatar} alt={"user_avatar"}/>
+                    <span>{props.sidebarStateAccount.name}</span>
                 </button>
-                <button className = {style.button_logout}>
-                    <i className = {`fas fa-sign-out-alt ${style.button_icon}`}/>
-                    Logout
-                </button>
+                <Link to = {`/${PAGE_START}`}>
+                    <button className = {style.button_logout}
+                            onClick = {() => props.sidebarActionLogout()}>
+                        <i className = {`fas fa-sign-out-alt ${style.button_icon}`}/>
+                        Logout
+                    </button>
+                </Link>
             </div>
         </div>
     );
